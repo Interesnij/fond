@@ -1020,7 +1020,7 @@ function prepareCapsuleByName(e, t) {
         "pointer-events": "auto",
         delay: n,
         opacity: 1
-    }), isTouchDevice() ? changeActionAdvice("Нажми & Держи") : (changeActionAdvice("Нажми & Держи"), $(".custom-cursor-wrapper").css("display", "block"))) : (TweenMax.to($(".section-home .navigate-single-button-container"), 0, {
+    }), isTouchDevice() ? changeActionAdvice("Нажми и держи") : (changeActionAdvice("Нажми и держи"), $(".custom-cursor-wrapper").css("display", "block"))) : (TweenMax.to($(".section-home .navigate-single-button-container"), 0, {
         "pointer-events": "none",
         opacity: 0
     }), TweenMax.to($(".home-social-awards-container"), .5, {
