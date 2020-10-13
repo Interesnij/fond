@@ -1829,7 +1829,7 @@ var _createClass = function() {
     RE_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     animationOfPopupCredits, tweenAnimateColorCircle, tweenRotateColorCircle, tweenAnimateMenuCircle, tweenWaitWand, tweenActionWand, tweenWaitGems, arrowRight, intervalMenu, intervalGems;
 $(window).on("load", function() {
-    load_home && home_docLoad(), load_home = !0, $(".ruya-lazy").length > 0 && $(".ruya-lazy").each(function(e, t) {
+    load_home && home_docLoad(), load_home = !0, $(".fond-lazy").length > 0 && $(".fond-lazy").each(function(e, t) {
         $(t).attr("src", $(t).attr("data-src"))
     })
 }), $(document).ready(home_docReady);
