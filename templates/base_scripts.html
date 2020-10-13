@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<script type="text/javascript">
+    var frm = $('#feedback-form');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: "{% url 'FeedbackView' %}",
+            data: frm.serialize(),
+            success: function (data) {
+                $('#ess').remove();
+                $('#ess2').show();
+            },
+            error: function(data) {
+                $("#message").html("ошибка!!");
+            }
+        });
+        return false;
+    });
+</script>
+<script>
+  $('#sp-header').ready(function() {
+    $(".page-loader div").fadeOut();
+    $('.offcanvas-init').removeClass('offcanvas-active');
+    $(".page-loader").delay(200).fadeOut("slow");
+  });
+</script>
+<script type="text/javascript">
+  $.ajax({
+    complete: function() {
+      $(window).scrollTop(0);
+    }
+  });
+</script>
+<script>
+  $.ajaxPrefilter(function( options, original_Options, jqXHR ) {
+    options.async = true;
+});
+</script>

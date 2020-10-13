@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles humanize %}
+{% block title %}Главная страница{% endblock %}
+{% block meta %}
+<meta property="og:url" content="http://трезвый-альметьевск.рф" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://трезвый-альметьевск.рф{% static 'images/1.jpg' %}?r=qwert" />
+
+{% endblock %}
+{% block content %}
+
+{% include 'main/slider.html' %}
+
+{% include 'main/about.html' %}
+{% include 'main/border.html' %}
+
+{% include 'main/filials.html' %}
+{% include 'main/border.html' %}
+
+{% include 'main/news.html' %}
+{% include 'main/border.html' %}
+
+{% include 'main/action.html' %}
+
+
+{% endblock %}

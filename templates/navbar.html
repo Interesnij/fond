@@ -1,0 +1,194 @@
+{% load staticfiles %}
+
+
+<div class="header-wrapper">
+    <header id="sp-header">
+        <div class="container">
+                <div class="row" style="flex-wrap: inherit;">
+                    <div class="sp-top1-wrapper col-auto col-lg-5">
+                        <div id="sp-top1">
+                            <div class="sp-column text-center text-lg-left">
+                                <div class="sp-module ">
+
+                                </div>
+                                <ul class="sp-contact-info">
+                                    <li class="sp-contact-phone">
+                                      <a>
+                                        <span class="sp-contact-content" style="font-size: 18px;color:white">г. Альметьевск, Радищева 47</span>
+                                      </a>
+                                    </li>
+                                    <li class="sp-contact-phone">
+                                      <a href="tel:89272482733">
+                                        <span class="sp-contact-content" style="font-size: 18px;color:white">+7 927 248 2733</span>
+                                      </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="sp-menu" class="d-none d-lg-block">
+                            <div class="sp-column">
+                                <nav class="sp-megamenu-wrapper" role="navigation">
+                                  {% url 'main' as main_url %}
+                                    <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-block">
+                                        <li {% if main_url == current_url %}
+                                            class="sp-menu-item active"
+                                            {% else %}
+                                            class="sp-menu-item"
+                                            {% endif %}>
+                                            <a href="{% url 'main' %}" ajax data-target="#ajax" data-el="#ajax">Главная </a>
+                                          </li>
+
+                                        {% url 'about' as about_url %}
+                                        {% url 'method' as method_url %}
+                                        {% url 'report' as report_url %}
+                                        {% url 'news_index' as news_url %}
+                                        {% url 'remediation' as remediation_url %}
+                                        <li class="{% if method_url == current_url %}active {% endif %}
+                                                   {% if about_url == current_url %}active {% endif %}
+                                                   {% if news_url == current_url %}active {% endif %}
+                                                   {% if report_url == current_url %}active {% endif %}
+                                                   {% if remediation_url == current_url %}active {% endif %}
+                                                   sp-menu-item sp-has-child">
+                                            <a href="{{ about_url }}" ajax data-target="#ajax" data-el="#ajax">О нас </a>
+                                            <div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 240px;">
+                                                <div class="sp-dropdown-inner">
+                                                    <ul class="sp-dropdown-items">
+                                                        <li class="{% if news_url == current_url %}active {% endif %}sp-menu-item">
+                                                          <a href="{{ news_url }}" ajax data-target="#ajax" data-el="#ajax">Новости </a>
+                                                        </li>
+
+                                                        <li class="{% if method_url == current_url %}active {% endif %}sp-menu-item">
+                                                          <a href="{{ method_url }}" ajax data-target="#ajax" data-el="#ajax">Метод Шичко </a>
+                                                        </li>
+                                                        <li class="{% if remediation_url  == current_url %}active {% endif %}sp-menu-item">
+                                                          <a href="{{ remediation_url }}" ajax data-target="#ajax" data-el="#ajax">Исцеление </a>
+                                                        </li>
+                                                        <li class="{% if report_url  == current_url %}active {% endif %}sp-menu-item">
+                                                          <a href="{{ report_url }}" ajax data-target="#ajax" data-el="#ajax">Отчеты </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        {% url 'guestbook' as guestbook_url %}
+                                        <li {% if guestbook_url == current_url %}
+                                          class="sp-menu-item active"
+                                          {% else %}
+                                          class="sp-menu-item"
+                                          {% endif %}>
+                                          <a href="{{ guestbook_url }}" ajax data-target="#ajax" data-el="#ajax">Отзывы </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sp-logo" class="col-auto col-lg-2">
+                        <div class="sp-column">
+                          <a id="offcanvas-toggler" aria-label="Navigation" class="offcanvas-toggler-left d-block d-lg-none" href="#">
+                            <span class="fa fa-bars" aria-hidden="true" title="Navigation"></span>
+                          </a>
+                          <div class="logo">
+                            <a style="color: white" href="{% url 'main' %}" ajax data-target="#ajax" data-el="#ajax">
+                              Трезвый Альметьевск
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="sp-top2-wrapper col-auto col-lg-5">
+                        <div id="sp-top2">
+                            <div class="sp-column text-center text-lg-right">
+                                <div class="sp-module ">
+                                    <div class="sp-module-content">
+
+                                </div>
+
+                                {% url 'profile-home' as profile_home %}
+                                {% url 'login' as login_url %}
+                                {% url 'signup' as signup_url %}
+                                <div class="sp-module ">
+                                    <div class="sp-module-content">
+                                        <div class="sp-custom-login sp-mod-login">
+                                          {% if request.user.is_anonymous %}
+                                            <span class="info-text">
+                                                <a href="{{ login_url }}" style="font-size: 18px;color:white" ajax data-target="#ajax" data-el="#ajax" class="{% if login_url == current_url %}active {% endif %}sppb-btn sppb-btn-link registration-btn">Войти </a> &nbsp;&nbsp;
+
+                                                <a href="{{ signup_url }}" style="font-size: 18px;color:white" ajax data-target="#ajax" data-el="#ajax" class="{% if signup_url == current_url %}active {% endif %}sppb-btn sppb-btn-link registration-btn">Создать аккаунт </a>
+                                            </span>
+                                          {% else %}
+                                          <span class="info-text">
+                                              <a href="{{ profile_home }}" style="font-size: 18px;color:white" ajax data-target="#ajax" data-el="#ajax" class="{% if profile_home == current_url %}active {% endif %}sppb-btn sppb-btn-link registration-btn">Мой профиль </a> &nbsp;&nbsp;
+
+                                              <a href="{% url 'logout' %}" style="font-size: 18px;color:white" ajax data-target="#ajax" data-el="#ajax" class="sppb-btn sppb-btn-link registration-btn">Выйти </a>
+                                          </span>
+                                          {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sp-menu2" class="d-none d-lg-block">
+                            <div class="sp-column">
+                                <nav class="sp-megamenu-wrapper" role="navigation">
+                                    <ul class="sp-megamenu-parent menu-animation-fade-down d-none d-lg-block">
+
+                                      {% url 'movies_index' pk=1 as movies_index1_url %}
+                                      {% url 'movies_index' pk=2 as movies_index2_url %}
+                                      {% url 'movies_index' pk=3 as movies_index3_url %}
+                                      {% url 'categories_edit' as categories_edit_url %}
+                                      <li class="sp-menu-item sp-has-child{% if movies_index1_url == current_url %} active {% endif %}{% if movies_index2_url == current_url %} active {% endif %}{% if movies_index3_url == current_url %} active {% endif %}{% if categories_edit_url == current_url %} active{% endif %}">
+                                          <a href="{% url 'categories_edit' %}" ajax data-target="#ajax" data-el="#ajax">Шаг 1</a>
+                                          <div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 240px;">
+                                              <div class="sp-dropdown-inner">
+                                                  <ul class="sp-dropdown-items">
+                                                    {% for object in categories %}
+                                      							{% url 'movies_index' pk=object.pk as movies_index %}
+                                                      <li class="{% if movies_index  == current_url %}active {% endif %}sp-menu-item">
+                                                        <a href="{{ movies_index }}" ajax data-target="#ajax" data-el="#ajax">{{ object.name }} </a>
+                                                      </li>
+                                                    {% endfor %}
+
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </li>
+
+                                      {% url 'diary_index' pk=1 as diary_index1_url %}
+                                      {% url 'diary_index' pk=2 as diary_index2_url %}
+                                      {% url 'diary_index' pk=3 as diary_index3_url %}
+                                      {% url 'no_game' as no_game_url %}
+                                      {% url 'diary_categories_edit' as diary_categories_edit_url %}
+                                      <li class="{% if diary_index1_url == current_url %}active {% endif %}
+                                                 {% if diary_index2_url == current_url %}active {% endif %}
+                                                 {% if diary_index3_url == current_url %}active {% endif %}
+                                                 {% if no_game_url == current_url %}active {% endif %}
+                                                 {% if diary_categories_edit_url == current_url %}active {% endif %}sp-menu-item sp-has-child">
+                                                 <a href="{% url 'diary_categories_edit' %}" ajax data-target="#ajax" data-el="#ajax">Шаг 2</a>
+                                            <div class="sp-dropdown sp-dropdown-main sp-menu-right" style="width: 240px;">
+                                                <div class="sp-dropdown-inner">
+                                                    <ul class="sp-dropdown-items">
+                                                      {% for object in diary_categories %}
+                                                      {% url 'diary_index' pk=object.pk as diary_index %}
+                                                        <li class="{% if diary_index == current_url %}active {% endif %}sp-menu-item"><a href="{{ diary_index }}" ajax data-target="#ajax" data-el="#ajax">{{ object.name }} </a></li>
+                                                      {% endfor %}
+                                                      <li class="{% if no_game_url  == current_url %}active {% endif %}sp-menu-item">
+                                                        <a href="{{ no_game_url }}" ajax data-target="#ajax" data-el="#ajax">Освобождение от игровой зависимости </a>
+                                                      </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                      </li>
+
+                                      {% url 'contacts' as contacts_url %}
+                                      <li class="{% if contacts_url == current_url %}active {% endif %}sp-menu-item"><a href="{{ contacts_url }}" ajax data-target="#ajax" data-el="#ajax">Шаг 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+</div>

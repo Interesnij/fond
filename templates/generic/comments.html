@@ -1,0 +1,128 @@
+{% load staticfiles humanize liked_user %}
+
+<br><br><br>
+
+<div class="mb-80 mb-xs-40">
+  {% if not request.user.is_authenticated %}
+  <p style="font-size: 18px">Только авторизованные пользователи могут оставлять комментарии. Пожалуйста,
+      <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal()">Авторизуйтесь</a>
+      или
+      <a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Зарегистрируйтесь</a>
+  </p>
+  {% else %}
+  <h3 id="write_comment">
+      <a style="cursor:pointer" onclick="return show_form('write_comment')">Написать комментарий</a>
+  </h3>
+  <form id="comment_form" class="form-validate post_comments" style="margin-bottom: 70px;" method="post">
+      {% csrf_token %}
+      {{ form.parent_comment }}
+      {{ form.comment_area }}
+      <br>
+      <button type="submit" class="btn btn-mod btn-gray btn-round" style="float:right;">Отправить</button>
+  </form>
+  {% endif %}
+  <br><br><br>
+  {% if comments.count != 0 %}
+    <h4 class="blog-page-title font-alt">
+        Комментарии
+        <small class="number">&nbsp;({{ comments.count }})</small>
+    </h4>
+  {% else %}
+  <h4 class="blog-page-title font-alt">
+      Комментариев нет
+  </h4>
+  {% endif %}
+    <ul class="media-list text comment-list clearlist" style="margin-bottom:100px">
+        <div id="gigig"></div>
+        {% for comment in comments %}
+        <li class="comment-item">
+            <a name="comment-{{ comment.id }}"></a>
+            <div class="row" id="{{ comment.id }}">
+                <div style="margin-left:{{ comment.get_offset }}0%">
+                    <a class="pull-left" href="{% url 'profile-user' pk=comment.author_id.pk %}">
+                      {% if comment.author_id.profile.avatar %}
+                        <img class="media-object comment-avatar" src="{{ comment.author_id.profile.avatar.url }}" alt="comment-avatar" />
+                      {% else %}
+                        <img class="media-object comment-avatar" src="{% static 'images/user.png' %}" alt="user" />
+                      {% endif %}
+                    </a>
+                    <div class="media-body" style="float: left;">
+                        <div class="comment-item-data">
+                            <div class="comment-author">
+                                <a href="{% url 'profile-user' pk=comment.author_id.pk %}">
+                                    {{ comment.author_id.username }}
+                                </a>
+                            </div>
+                            <div style="font-size:14px;color:#777;">
+                              {{ comment.posted|naturaltime }}
+                              <span class="separator">&mdash;</span>
+                          </div>
+                            <p style="margin-bottom:1em;">{{ comment.content|safe }}</p>
+
+                            <span style="margin-right:0">
+                            {% if request.user.is_authenticated %}
+                              <span class="like2 {% if comment.votes.likes.all|user_in:user %}text-success{% endif %}"
+                                  data-id="{{ comment.id }}"
+                                  data-action="like2"
+                                  data-type="comment"
+                                  data-tooltip="Мне нравится">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <span data-count="like">{{ comment.votes.likes.count }}</span>
+                              </span>
+                            {% else %}
+                                <span class="like2 {% if comment.votes.likes.all|user_in:user %}text-success{% endif %}"
+                                  data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal()">
+                                  <span class="fa fa-thumbs-o-up"></span>
+                                  <span data-count="like">{{ comment.votes.likes.count }}</span>
+                                </span>
+                              {% endif %}
+                              &nbsp;&nbsp;
+                              {% if request.user.is_authenticated %}
+                              <span class="dislike2 {% if comment.votes.dislikes.all|user_in:user %}text-danger{% endif %}"
+                                  data-id="{{ comment.id }}"
+                                  data-action="dislike2"
+                                  data-type="comment"
+                                  data-tooltip="Мне не нравится">
+                                <span class="fa fa-thumbs-o-down"></span>
+                                <span data-count="dislike">{{ comment.votes.dislikes.count }}</span>
+                              </span>
+                              {% else %}
+                              <span class="dislike2 {% if comment.votes.dislikes.all|user_in:user %}text-danger{% endif %}"
+                                    data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal()">
+                                <span class="fa fa-thumbs-o-down"></span>
+                                <span data-count="dislike">{{ comment.votes.dislikes.count }}</span>
+                              </span>
+                              {% endif %}
+                            {% if request.user.is_authenticated and request.user != comment.author_id %}
+                            &nbsp;&nbsp;
+                            <a class="reply" style="text-decoration:none;font-size:16px" id="reply_{{ comment.id }}" onclick="return show_form({{ comment.id }})">
+                              Ответить
+                            </a>
+                            {% endif %}
+                            {% if request.user.is_anonymous %}
+                            &nbsp;&nbsp;
+                            <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal()" class="reply" data-tooltip="Нажмите чтобы войти" style="text-decoration:none;font-size:16px">
+                            <span>Ответить</span>
+                            </a>
+                            {% endif %}
+
+                          </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <a style="opacity:0" href="#comment-{{ comment.id }}">#</a>
+        </li>
+        <span></span>
+        <script>
+            $("#reply_{{ comment.id }}").click(function() {
+                var objectUser = $("#comment_form").prev().find(".comment-author").text().trim();
+                $("#id_comment_area").val(objectUser + ', ')
+            });
+        </script>
+        {% endfor %}
+
+    </ul>
+
+</div>
