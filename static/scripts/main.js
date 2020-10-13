@@ -1669,7 +1669,7 @@ function changeRandomTheme() {
     do var t = Math.floor(Math.random() * possibleThemes.length); while (e == possibleThemes[t]);
     e = possibleThemes.splice(t, 1), changeTheme(e[0]);
     var n = .8;
-    $(".bottom-bar .color-container .color-text").text("Ta-da!"), TweenLite.set(".bottom-bar .color-container .color-text", {
+    $(".bottom-bar .color-container .color-text").text("Чик!"), TweenLite.set(".bottom-bar .color-container .color-text", {
         y: 0,
         opacity: 0
     }), TweenLite.to(".bottom-bar .color-container .color-text", 1.2 * n, {
@@ -5083,3 +5083,6 @@ var matterEngine = Matter.Engine,
 $(window).scroll(updateMouseOffset), $(window).on("resize", function() {
     $("body").hasClass("popup-capsule-opened") && (height < $(".fo-canvas").innerHeight() || width < $(".fo-canvas").innerWidth() || !isTouchDevice()) && fo_init(!0)
 });
+
+
+var THEMES = JSON.parse('["default","red","blue","yellow","orange-blue","pink-yellow","blue-pink","purple-blue","blue-green"]');
