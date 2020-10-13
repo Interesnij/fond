@@ -405,7 +405,7 @@
             </div>
         </div>
 
-        <div class="capsule not-showed " data-color="#540000" data-name="Awwwards" data-href="/developer-site-of-the-year/">
+        <div class="capsule not-showed " data-color="#540000" data-name="awwwards" data-href="/awwwards/">
             <div class="capsule-floating-object"> <img src="/static/images/01_big.png" class="image-path"></img></div>
             <p class="capsule-main-title">Awwwards</p>
 
@@ -423,27 +423,7 @@
         </div>
     </div>
     <div class="credits-popup">
-        <div class="popup-content">
-            <div class="close-button cursor-customized">
-                <div class="cross-container">
-                    <div class="stick stick1"></div>
-                    <div class="stick stick2"></div>
-                </div>
-                <div class="back-container">
-                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
-                </div>
-            </div>
-
-            <div class="credits-container animable-popup-container">
-                <p class="background-text font-menu-item font-white"></p>
-                <div class="credit-image"> <img data-src="/static/images/cat.gif" alt="" class="image fond-lazy"></div>
-                <div class="credits-wrapper">
-                    <p class="credits-p font-p">
-                      Этот сайт-наша скромная дань уважения тысячам сумасшедших людей, которые делают сайты со страстью и усилиями. Увидимся в интернете.
-                    </p>
-                </div>
-            </div>
-        </div>
+      {% include 'items/credits_popup.html' %}
     </div>
     <div class="gems-popup menu-popup">
         <div class="popup-content">
@@ -495,7 +475,7 @@
             </svg></div>
     </div>
     <footer> </footer>
-    <script async src="/static/scripts/audio.js"></script>
+    <script src="/static/scripts/audio.js"></script>
     <script async src="/static/scripts/main.js"></script>
 </body>
 
