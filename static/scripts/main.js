@@ -22360,7 +22360,7 @@ function sendForm(e) {
         var i = t.serialize();
         jQuery.ajax({
             type: "POST",
-            url: HOME_URL + "php/send-form.php",
+            url: "",
             data: i,
             success: function(e) {
                 e = JSON.parse(e), "ok" == e.status ? (hideSendingMessage(), initConfeti(), showSendScreen(), sent_form = !0, lastEmailForm = t[0].email.value, t[0].reset(), createTagEvent("emailSended")) : sent_form = !1, animatingSlide = !1, sending_form = !1
@@ -22692,7 +22692,7 @@ function stopBoringText() {
 function sendNewsletter() {
     sending_form || (sending_form = !0, jQuery.ajax({
         type: "POST",
-        url: HOME_URL + "php/send-news.php",
+        url: "",
         data: {
             email: $(".dinamic-popup .input-newsletter").val()
         },
@@ -22712,7 +22712,7 @@ function sendNewsletter() {
 function sendContactNewsletter() {
     sending_form || (sending_form = !0, $(".special-popup .send-screen-newsletter").css("pointer-events", "none"), jQuery.ajax({
         type: "POST",
-        url: HOME_URL + "php/send-news.php",
+        url: "",
         data: {
             email: lastEmailForm
         },

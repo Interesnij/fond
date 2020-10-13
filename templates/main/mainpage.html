@@ -72,31 +72,8 @@
             }
         }
     </script>
-    <div class="preload-container">
-        <div class="preload-content">
-            <div class="images-container" id="preload-images-container">
-              <img class="font-regular" src="/static/images/1_big.png" alt="" onload="preloadImagesLoaded()" data-pagespeed-url-hash="1798002330">
-              <img class="font-geo-bold" src="/static/images/1_big-1.png" alt="" onload="preloadImagesLoaded()" data-pagespeed-url-hash="3325779274">
-              <img class="font-liquido" src="/static/images/1_big-2.png" alt="" onload="preloadImagesLoaded()" data-pagespeed-url-hash="3620279195">
-              <img src="/static/images/01_big.png" alt="" onload="preloadImagesLoaded()" data-pagespeed-url-hash="31940724">
-            </div>
-            <p class="subtitle font-menu font-white blink">Загрузка</p>
-        </div>
-        <div class="headphones-container">
-            <p class="font-menu font-gray bold">Внимание! На этом сайте</p>
-            <p class="font-menu font-gray bold">есть звук</p>
-            <svg id="headphone-icon" enable-background="new 0 0 64 64" height="64px" viewBox="0 0 64 64" width="64px" xml:space="preserve">
-                <g>
-                    <path d="   M13,28.9v-3.1c0-8.8,7.2-16,16-16l0,0c8.8,0,16,7.2,16,16v3.1" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                    <path d="M45,44.5l2.6-9.7   c0.1-0.4,0.1-0.7,0.1-1.1c0,0,0.1,0,0.1,0c1.9,0.5,3.1,2.5,2.6,4.5l-1.3,5c-0.5,1.9-2.5,3.1-4.5,2.6c-0.1,0-0.1,0-0.2-0.1   C44.7,45.3,44.9,44.9,45,44.5z" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" />
-                    <path d="   M36.2,42.1c-0.6,2.4,0.8,4.9,3.2,5.6l0,0c2.4,0.7,4.9-0.8,5.6-3.2l2.6-9.7c0.6-2.4-0.8-4.9-3.2-5.6l0,0c-2.4-0.6-4.9,0.8-5.6,3.2   L36.2,42.1z" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                    <path d="M12.5,44.5l-2.6-9.7   c-0.1-0.4-0.1-0.7-0.1-1.1c0,0-0.1,0-0.1,0c-1.9,0.5-3.1,2.5-2.6,4.5l1.3,5c0.5,1.9,2.5,3.1,4.5,2.6c0.1,0,0.1,0,0.2-0.1   C12.8,45.3,12.6,44.9,12.5,44.5z" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" />
-                    <path d="   M21.2,42.1c0.6,2.4-0.8,4.9-3.2,5.6l0,0c-2.4,0.7-4.9-0.8-5.6-3.2l-2.6-9.7c-0.6-2.4,0.8-4.9,3.2-5.6l0,0c2.4-0.6,4.9,0.8,5.6,3.2   L21.2,42.1z" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                    <path d="   M41.9,47.9c0,0,1.8,0,4.1,0c2.2,0,4.1,1.4,4.1,3.2s1.6,3.2,3.5,3.2s3.5,0,3.5,0" fill="none" stroke="#4D4D4D" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                </g>
-            </svg>
-        </div>
-    </div>
+
+    {% include 'items/preload.html' %}
     <section class="section-home">
         <div id="awwwards" style="position: fixed; z-index: 999; transform: translateY(-50%); top: 50%; right: 0"><a href="" target="_blank"><svg width="53.08" height="171.358">
                     <path class="js-color-bg" fill="black" d="M0 0h53.08v171.358H0z"></path>
@@ -677,89 +654,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="wanna-talk-container js-animate" data-animation="top-opacity">
-                                <div class="wanna-talk-content">
-                                    <p class="font-liquido-h1 font-uppercase font-black hover-white cursor-customized js-open-popup open-contact">Wanna Chat?</p>
-                                </div>
-                            </div>
-                            <div class="footer-popup">
-                                <div class="top-part">
-                                    <div class="contact-container">
-                                        <div class="content-wrapper">
-                                            <div class="link-container">
-                                              <a href="mailto:" class="fax-phrase font-menu font-black font-bold general-hover hover-big cursor-customized hover-white">
-                                                hello@ruya.digital
-                                              </a>
-                                            </div>
-                                            <div class="link-container">
-                                                <p class="contact-phrase font-menu font-black font-bold"> 2204, Burlington Tower</p>
-                                            </div>
-                                            <div class="link-container">
-                                                <p class="contact-phrase font-menu font-black font-bold"> Business Bay, 8418, Dubai</p>
-                                            </div>
-                                            <div class="link-container">
-                                                <p class="contact-phrase font-menu font-black font-bold"> United Arab Emirates</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ubication-container">
-                                        <div class="content-wrapper">
-                                            <div class="link-container newsletter-container">
-                                              <label class="subscribe-phrase font-menu font-black font-bold" for="input-newsletter-0">Subscribe to our newsletter</label>
-                                                <div class="input-container">
-                                                  <input id="input-newsletter-0" class="font-menu font-black input input-newsletter" type="text" placeholder="your@email.com">
-                                                    <div class="send-container">
-                                                      <svg class="send-icon fill-black" enable-background="new 0 0 128 128" viewBox="0 0 128 128" xml:space="preserve">
-                                                          <path d="M74.508,108.239c-0.772,0-1.479-0.445-1.81-1.148l-16.863-35.84L20.732,55.116c-0.734-0.337-1.193-1.083-1.164-1.891  c0.03-0.808,0.543-1.518,1.3-1.8l83.312-31.107c0.729-0.271,1.552-0.096,2.105,0.452c0.555,0.548,0.739,1.369,0.475,2.102  l-30.371,84.047c-0.274,0.761-0.98,1.28-1.788,1.318C74.569,108.238,74.538,108.239,74.508,108.239z M26.772,53.49l31.396,14.432  c0.429,0.197,0.774,0.539,0.975,0.965l15.122,32.139l27.264-75.448L26.772,53.49z" />
-                                                          <path d="M57.334,71.738c-0.512,0-1.023-0.195-1.414-0.586c-0.781-0.78-0.781-2.047,0-2.828l47.545-47.546  c0.781-0.781,2.047-0.781,2.828,0c0.781,0.781,0.781,2.047,0,2.828L58.748,71.152C58.357,71.543,57.846,71.738,57.334,71.738z" />
-                                                      </svg>
-                                                    </div>
-                                                    <div class="input-message">
-                                                        <p class="font-menu font-black">Added to the Newsletter • Thank you</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="social-container">
-                                      <a href="" target="_blank" rel="noopener" class="social-icon general-hover hover-big cursor-customized hover-white">
-                                        <svg class="fill-black" enable-background="new 0 0 56.693 56.693" height="56.693px" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" >
-                                            <path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path>
-                                        </svg>
-                                      </a>
-                                      <a href="" target="_blank" rel="noopener" class="social-icon general-hover hover-big cursor-customized hover-white">
-                                        <svg class="fill-black" viewBox="0 0 24 24">
-                                          <title></title>
-                                          <g>
-                                            <path d="M23.87,4.43a.5.5,0,0,0-.6-.1,4.76,4.76,0,0,1-.75.27A4.85,4.85,0,0,0,23.37,3a.5.5,0,0,0-.77-.53,10.59,10.59,0,0,1-2.53,1A5.05,5.05,0,0,0,16.5,2a5.71,5.71,0,0,0-3,.93C11.6,4,11.27,6.47,11.41,8a13,13,0,0,1-9-4.76A.53.53,0,0,0,2,3a.5.5,0,0,0-.4.25,5.35,5.35,0,0,0,.22,5.7c-.15-.1-.31-.22-.47-.35A.5.5,0,0,0,.5,9,5.73,5.73,0,0,0,3,13.64l-.39-.11A.5.5,0,0,0,2,14.2a6.48,6.48,0,0,0,4.19,3.62A9.22,9.22,0,0,1,.56,19a.5.5,0,0,0-.31.93A15.2,15.2,0,0,0,8,22H8a13.35,13.35,0,0,0,10-4.63,13.63,13.63,0,0,0,3.65-9.92A9.81,9.81,0,0,0,23.92,5,.5.5,0,0,0,23.87,4.43ZM8,21.5Z"></path>
-                                          </g>
-                                          </svg>
-                                        </a>
-                                        <a href="" target="_blank" rel="noopener" class="social-icon general-hover hover-big cursor-customized hover-white">
-                                          <svg class="fill-black" viewBox="0 0 24 24">
-                                            <title></title>
-                                            <g>
-                                              <path d="M17,23H7a6,6,0,0,1-6-6V7A6,6,0,0,1,7,1H17a6,6,0,0,1,6,6V17A6,6,0,0,1,17,23ZM7,3A4,4,0,0,0,3,7V17a4,4,0,0,0,4,4H17a4,4,0,0,0,4-4V7a4,4,0,0,0-4-4Z"></path>
-                                              <g>
-                                                <path d="M12,18a6,6,0,1,1,6-6A6,6,0,0,1,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Z"></path>
-                                              </g>
-                                              <g>
-                                                <circle cx="18" cy="5" r="1"></circle>
-                                              </g>
-                                            </g>
-                                          </svg>
-                                        </a>
-                                      </div>
-                                      <a href="" target="_blank" rel="noopener" class="terms-phrase  font-menu font-black font-bold cursor-customized general-hover hover-white">
-                                        <u class="ruya-font-underline-black">Terms and conditions</u>
-                                      </a>
-                                    <p class="dev-phrase font-menu font-black font-bold">Made by
-                                      <a href="" target="_blank" rel="noopener" class="ruya-link general-hover hover-big cursor-customized hover-white">
-                                        <u class="ruya-word ruya-font-underline-black cursor-hover">RUYA</u>
-                                      </a>
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1044,9 +938,6 @@
             </svg></div>
     </div>
     <footer> </footer>
-    <script type="text/javascript">
-        var HOME_URL = "/static/";
-    </script>
     <script type="text/javascript">
         var THEMES = JSON.parse('["default","red","blue","yellow","orange-blue","pink-yellow","blue-pink","purple-blue","blue-green"]');
     </script>
