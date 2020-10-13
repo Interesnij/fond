@@ -22600,7 +22600,7 @@ function fadeInMainTitle(e) {
 }
 
 function createTagEvent(e, t) {
-    void 0 == t && (t = {}), t.event = String(e), dataLayer && dataLayer.push(t)
+    void 0 == t && (t = {}), t.event = String(e)
 }
 
 function createPopupTagEvent(e) {
