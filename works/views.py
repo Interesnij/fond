@@ -4,7 +4,6 @@ from works.models import Work
 
 
 class WorksListView(ListView):
-	model = Proect
 	template_name="works_index.html"
 
 	def get_queryset(self):
