@@ -3,7 +3,7 @@
         <div class="slides">
           {% if works %}
           {% for object in works %}
-            <div class="slide {% if forloop.first %}current{% endif %}" data-name="{{ object.slug }}">
+            <div class="slide" data-name="{{ object.slug }}">
               <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="{{ object.get_first_photo }}">
                 <img class="preview" width="20" height="15" loading="lazy" src="{{ object.get_first_preview }}">
               </div>
