@@ -1,0 +1,49 @@
+{% for object in works %}
+<div class="capsule-popup work-popup" data-popup-name="{{ object.slug }}">
+    <div class="popup-content is-a-work">
+        <div class="close-button cursor-customized">
+            <div class="cross-container">
+                <div class="stick stick1"></div>
+                <div class="stick stick2"></div>
+            </div>
+            <div class="back-container">
+                <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
+            </div>
+        </div>
+        <div class="popup-content-work-container">
+            <div class="hand-image-container parallax-container"></div>
+            <div class="work-content">
+                <div class="work-background-image-container">
+                  <img class="background-image" src="/static/images/work/ahc.jpg">
+                  <div class="background-gradient"></div>
+                </div>
+                <div class="work-text-container">
+                    <div class="work-text">
+                        <div class="center-text">
+                            <p class="font-title font-black center-text-title js-animate" data-animation="top-opacity" ">
+                              {{ object.title }}
+                            </p>
+                            <p class=" font-h5 font-black center-text-description js-animate" data-animation="top-opacity">
+                              {{ object.descriptio|safe }}
+                            </p>
+                          </div>
+                    </div>
+                </div>
+                {% for image in object.photo_work.all %}
+                <div class="preload-image-container width-image not-loaded-yet">
+                    <div class="preload-mask-wrapper" data-height="734" data-width="1366">
+                        <div class="preload-mask animate_when_loaded"></div>
+                    </div>
+                    <img data-src="{{ image.file.url }}" class="lazy">
+                </div>
+                {% endfor %}
+
+                {% include 'footer_popup.html' %}
+
+            </div>
+        </div>
+        <audio class="capsule-sound" src="/static/audio/al-habtoor.mp3"></audio>
+    </div>
+</div>
+
+{% endfor %}

@@ -1,9 +1,10 @@
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from works.models import Work
+from generic.mixins import CategoryListMixin
 
 
-class WorksListView(ListView):
+class WorksListView(ListView, CategoryListMixin):
 	template_name="works_index.html"
 
 	def get_queryset(self):
@@ -11,7 +12,7 @@ class WorksListView(ListView):
 		return works
 
 
-class WorkView(TemplateView):
+class WorkView(TemplateView, CategoryListMixin):
 	template_name = "work.html"
 
 	def get(self,request,*args,**kwargs):

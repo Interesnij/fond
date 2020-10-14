@@ -1,36 +1,18 @@
 <div class="work-slider-wrapper">
     <div class="slider-container">
         <div class="slides">
-            <div class="slide current" data-name="work-al-erkyah">
-              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="/static/images/work/aerk2.jpg">
-                <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
+          {% if works %}
+          {% for object in works %}
+            <div class="slide {% if forloop.first %}current{% endif %}" data-name="{{ object.slug }}">
+              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="{{ object.get_first_photo }}">
+                <img class="preview" width="20" height="15" loading="lazy" src="{{ object.get_first_preview }}">
               </div>
-              <p class="slider-main-title">Al Erkyah</p>
+              <p class="slider-main-title">{{ object.title }}</p>
             </div>
-            <div class="slide " data-name="work-fond">
-              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="/static/images/work/fond.jpg">
-                <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
-              </div>
-              <p class="slider-main-title">Fond</p>
-            </div>
-            <div class="slide " data-name="work-richland">
-              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="/static/images/work/richland.jpg">
-                <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
-              </div>
-              <p class="slider-main-title">Richland</p>
-            </div>
-            <div class="slide " data-name="work-viceroy">
-              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="/static/images/work/Viceroy.jpg">
-                <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
-              </div>
-              <p class="slider-main-title">Viceroy</p>
-            </div>
-            <div class="slide " data-name="work-ahc">
-              <div class="progressive replace grid-image width-2 mq-80 js-animate" data-href="/static/images/work/ahc.jpg">
-                <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
-              </div>
-              <p class="slider-main-title">AHC</p>
-            </div>
+          {% endfor %}
+          {% else %}
+          Проектов пока нет
+          {% endif %}
         </div>
     </div>
     <div class="controls-container">

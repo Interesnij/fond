@@ -1,8 +1,9 @@
 from django.views.generic import ListView
 from friends.models import Friend
+from generic.mixins import CategoryListMixin
 
 
-class FriendsView(ListView):
+class FriendsView(ListView, CategoryListMixin):
 	model = Friend
 	template_name="friends.html"
 

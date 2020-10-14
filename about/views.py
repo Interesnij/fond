@@ -4,9 +4,10 @@ from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import View
+from generic.mixins import CategoryListMixin
 
 
-class AboutView(TemplateView):
+class AboutView(TemplateView, CategoryListMixin):
     template_name = "about_v2.html"
 
     def get_context_data(self,**kwargs):
