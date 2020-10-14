@@ -10,6 +10,9 @@ urlpatterns = [
     url(r'^$', include ('main.urls')),
     url(r'^terms/', include('terms.urls')),
     url(r'^policy/', include('policy.urls')),
+    url(r'^friends/', include('friends.urls')),
+    url(r'^proects/', include('works.urls')),
+    url(r'^service/', include('service.urls')),
 
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 

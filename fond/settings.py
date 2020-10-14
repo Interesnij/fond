@@ -23,8 +23,12 @@ INSTALLED_APPS = [
     'policy',
     'terms',
     'main',
+    'friends',
+    'works',
+    'service',
     'ckeditor',
     'ckeditor_uploader',
+    'imagekit',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'media/'
