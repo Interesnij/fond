@@ -10,3 +10,4 @@ class WorkAdmin(admin.ModelAdmin):
         model = Work
 
 admin.site.register(Work, WorkAdmin)
+admin.site.register(WorkPhoto)
