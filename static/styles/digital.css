@@ -308,30 +308,16 @@ body select {
     color: var(--black)
 }
 
-.font-liquido {
-    font-family: "liquido"
-}
-
-.font-geo-bold {
-    font-family: "geo-bold"
-}
-
-.font-regular {
-    font-family: "regular"
-}
-
 .font-liquido-h1 {
     font-size: 12vw
 }
 
 .font-h1 {
-    font-family: "medium";
     font-size: 16rem;
     line-height: 21rem
 }
 
 .font-h2 {
-    font-family: "regular";
     font-size: 6.5rem;
     line-height: 7rem;
     letter-spacing: 4px;
@@ -339,7 +325,6 @@ body select {
 }
 
 .font-menu-item {
-    font-family: "geo-bold";
     font-size: 6.5rem;
     line-height: 7rem;
     letter-spacing: 4px;
@@ -347,13 +332,11 @@ body select {
 }
 
 .font-h3 {
-    font-family: "medium";
     font-size: 4rem;
     line-height: 4.5rem
 }
 
 .font-h4 {
-    font-family: "regular";
     font-size: 3rem;
     line-height: 3.5rem;
     letter-spacing: 4px;
@@ -361,41 +344,28 @@ body select {
 }
 
 .font-h5 {
-    font-family: "regular";
     font-size: 1.8rem;
     line-height: 2.8rem
 }
 
-.font-h5.bold {
-    font-family: "medium"
-}
-
 .font-h6 {
-    font-family: "regular";
     font-size: .8rem;
     line-height: 1.3rem;
     letter-spacing: 1px
 }
 
-.font-h6.bold {
-    font-family: "medium"
-}
-
 .font-h7 {
-    font-family: "medium";
     font-size: .7rem;
     line-height: 1.2rem;
     letter-spacing: 1.5px
 }
 
 .font-menu-medium {
-    font-family: "medium";
     font-size: 4.8rem;
     line-height: 6.3rem
 }
 
 .font-menu {
-    font-family: "regular";
     font-size: 11px;
     line-height: 1.5rem;
     letter-spacing: 1.5px;
@@ -404,7 +374,6 @@ body select {
 }
 
 .font-p {
-    font-family: "regular";
     font-size: 11px;
     line-height: 1.5rem;
     letter-spacing: 1.5px;
@@ -413,7 +382,6 @@ body select {
 }
 
 .font-p2 {
-    font-family: "regular";
     font-size: 16px;
     line-height: 1.5rem;
     letter-spacing: 1.5px;
@@ -421,7 +389,6 @@ body select {
 }
 
 .font-subtitle {
-    font-family: "geo-bold";
     font-size: 2.3rem;
     line-height: 3rem;
     letter-spacing: 2px;
@@ -429,7 +396,6 @@ body select {
 }
 
 .font-title {
-    font-family: "geo-bold";
     font-size: 6.5rem;
     line-height: 7rem;
     letter-spacing: 4px;
