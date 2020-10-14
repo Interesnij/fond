@@ -21672,7 +21672,7 @@ function goToSingle() {
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("нажми и держи"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
@@ -26042,3 +26042,6 @@ var matterEngine = Matter.Engine,
 $(window).scroll(updateMouseOffset), $(window).on("resize", function() {
     $("body").hasClass("popup-capsule-opened") && (height < $(".fo-canvas").innerHeight() || width < $(".fo-canvas").innerWidth() || !isTouchDevice()) && fo_init(!0)
 });
+
+
+var THEMES = JSON.parse('["default","red","blue","yellow","orange-blue","pink-yellow","blue-pink","purple-blue","blue-green"]');
