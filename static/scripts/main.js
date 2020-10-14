@@ -713,7 +713,7 @@ function goToSingle() {
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-slider") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
@@ -722,12 +722,12 @@ function endCapsuleLoop() {
             if (capsuleAnimationFinished) {
                 buttonPushed = !1, $(".capsules-container .capsule").removeClass("showing"), $currentCapsule.addClass("showing"), $(".section-home .navigate-single-button-container .navigate-single-button .navigate-single-button-advice").removeClass("blink"), stopSound(audioActive), playSound(capsuleLoadedAudio), playSound(regularAudio), fadeOutMainTitle(!0), $(".main-title-container p").removeClass("blink");
                 var e;
-                "work" == $currentCapsule.attr("data-slider") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), changeColorMainTitle("font-black"), openSingleOfSectionPopup(), $(" .section-home .background-bar .progress-bar").css("left", "-100%"), changeActionAdvice("Press & Hold"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow")
+                "work" == $currentCapsule.attr("data-slider") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), changeColorMainTitle("font-black"), openSingleOfSectionPopup(), $(" .section-home .background-bar .progress-bar").css("left", "-100%"), changeActionAdvice("нажми и держи"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow")
             }
         } else {
             buttonPushed = !1;
             var e;
-            "work" == $currentCapsule.attr("data-slider") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), appearHeaderAndFooter(), changeActionAdvice("Press & Hold"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow"), stopSound(audioActive), playSound(regularAudio);
+            "work" == $currentCapsule.attr("data-slider") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), appearHeaderAndFooter(), changeActionAdvice("нажми и держи"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow"), stopSound(audioActive), playSound(regularAudio);
             var t = $(".section-home .background-bar .progress-bar");
             TweenMax.to(t, .3, {
                 left: "-100%",
@@ -946,7 +946,7 @@ function closeGeneralPopup(e) {
         e.stopPropagation(), goingToScrollTop = 0, enableParallax = !1, $(".transition-curtain").hasClass("is-opened") || animateTransitionCurtain(),
             inTransition = !0, $(".bottom-bar .center-container").removeClass("blink");
         var t;
-        t = "work" == $currentCapsule.attr("data-name") ? $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text() : $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(t);
+        t = "work" == $currentCapsule.attr("data-slider") ? $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text() : $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(t);
         var n = 1;
         1 == closeGeneralPopupInstantly && (n = 0), TweenMax.to($(".dinamic-popup .popup-content .popup-content-work-container"), n, {
             y: 30,
@@ -1056,7 +1056,7 @@ function animateNewHome() {
 }
 
 function animatePopupToHome() {
-    popupOpened = !1, "work" == $currentCapsule.attr("data-name") && showWorkSlider(), fadeOutMainTitle(!0);
+    popupOpened = !1, "work" == $currentCapsule.attr("data-slider") && showWorkSlider(), fadeOutMainTitle(!0);
     var e = new TimelineMax;
     e.to($("#three-container"), 1, {
         opacity: 1
@@ -1121,7 +1121,7 @@ function hoverOutControlSliderButton(e) {
 }
 
 function animateCapsulePopup() {
-    if ("work" == $currentCapsule.attr("data-name")) {
+    if ("work" == $currentCapsule.attr("data-slider")) {
         var e = Number($(".section-home .navigate-single-button-container").attr("data-work-index"));
         e > 0 && (e /= 2);
         var t = $($currentCapsule.find(".capsule-popup.work-popup")[e]).find(".capsule-sound")[0]
