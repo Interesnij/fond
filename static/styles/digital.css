@@ -1654,6 +1654,7 @@ select:-webkit-autofill:focus {
 .top-bar .logo-container {
     left: 5%;
     top: 50%;
+    font-size: 2em;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%)
