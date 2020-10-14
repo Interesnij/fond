@@ -21960,7 +21960,7 @@ function prepareCapsuleByName(e, t) {
     var n;
     $(".capsules-container .capsule").removeClass("current"), $('.capsules-container .capsule[data-name="' + e + '"]').addClass("current"), $currentCapsule = $(".capsules-container .capsule.current"), $(".home-center-container .special-capsule-link").attr("data-menu") == e ? $(".home-center-container, .bottom-bar .special-capsule-button-link").addClass("hidden") : $(".home-center-container, .bottom-bar .special-capsule-button-link").removeClass("hidden");
     var i;
-    if ("work" == e) {
+    if ("Проекты" == e) {
         $(".main-title-container p").css("font-size", "22vw"), showWorkSlider(), $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
         var r = $($currentCapsule.find(".capsule-popup")[0]).attr("data-popup-name");
         $(".navigate-single-button-container").attr("data-open-popup", r), i = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
