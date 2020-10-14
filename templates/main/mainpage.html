@@ -75,8 +75,10 @@
             <div class="slider-container">
                 <div class="slides">
                     <div class="slide current" data-name="work-al-erkyah">
-                        <img src="/static/images/work/aerk2.jpg">
-                        <p class="slider-main-title">Al Erkyah</p>
+                      <div class="progressive replace" data-href="/static/images/work/aerk2.jpg">
+                        <img class="preview" width="20" height="15" loading="lazy" src="/static/images/preview.jpg">
+                      </div>
+                      <p class="slider-main-title">Al Erkyah</p>
                     </div>
                     <div class="slide " data-name="work-fond">
                       <img src="/static/images/work/fond.jpg">
@@ -384,6 +386,7 @@
     <footer> </footer>
     <script src="/static/scripts/audio.js"></script>
     <script async src="/static/scripts/main.js"></script>
+    <script defer src="/static/scripts/progressive-image.js"></script>
 </body>
 
 </html>
