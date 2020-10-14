@@ -564,7 +564,8 @@ function removePreload() {
 function animateFirstScreen() {
     playSound(regularAudio);
     var e = $(".capsules-container .capsule.showing").data("name");
-    prepareCapsuleByName(e, !0);
+    var s = $(".capsules-container .capsule.showing").data("slider");
+    prepareCapsuleByName(e, s, !0);
     var t = $(".capsules-container .capsule[data-name=home]").find(".capsule-sound")[0];
     playSound(t), stopSound(actionAudio), revealCurrentGem(), TweenMax.to($(".main-title-container p"), 0, {
         top: "30px"
@@ -988,20 +989,20 @@ function disableCurrentSectionLink() {
 }
 
 function changeCapsule(e) {
-    $(e.currentTarget).hasClass("special-link") && $(".special-popup").hasClass("active") ? (e.stopPropagation(), $(".special-popup .popup-content .close-button").click()) : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(), $(".dinamic-popup .popup-content .close-button").click()) : soundCapsulePlayed || inTransition || (e.stopPropagation(), $(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1, $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0, $(".dinamic-popup .popup-content .close-button").click(), inTransition = !1), changeCapsuleByName($(e.currentTarget).attr("data-menu"))))
+    $(e.currentTarget).hasClass("special-link") && $(".special-popup").hasClass("active") ? (e.stopPropagation(), $(".special-popup .popup-content .close-button").click()) : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(), $(".dinamic-popup .popup-content .close-button").click()) : soundCapsulePlayed || inTransition || (e.stopPropagation(), $(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1, $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0, $(".dinamic-popup .popup-content .close-button").click(), inTransition = !1), changeCapsuleByName($(e.currentTarget).attr("data-menu"), null)))
 }
 
-function changeCapsuleByName(e) {
-    soundCapsulePlayed = !0, fadeOutMainTitle(!0), prepareCapsuleByName(e, !1), closeMenu(), setTimeout(function() {
+function changeCapsuleByName(e, s) {
+    soundCapsulePlayed = !0, fadeOutMainTitle(!0), prepareCapsuleByName(e, s, !1), closeMenu(), setTimeout(function() {
         animateNewHome()
     }, 1300)
 }
 
-function prepareCapsuleByName(e, t) {
+function prepareCapsuleByName(e, s, t) {
     var n;
     $(".capsules-container .capsule").removeClass("current"), $('.capsules-container .capsule[data-name="' + e + '"]').addClass("current"), $currentCapsule = $(".capsules-container .capsule.current"), $(".home-center-container .special-capsule-link").attr("data-menu") == e ? $(".home-center-container, .bottom-bar .special-capsule-button-link").addClass("hidden") : $(".home-center-container, .bottom-bar .special-capsule-button-link").removeClass("hidden");
     var i;
-    if ("work" == e) {
+    if ("work" == s) {
         $(".main-title-container p").css("font-size", "22vw"), showWorkSlider(), $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
         var r = $($currentCapsule.find(".capsule-popup")[0]).attr("data-popup-name");
         $(".navigate-single-button-container").attr("data-open-popup", r), i = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
@@ -1837,7 +1838,7 @@ var changingColorInterval, tweenMaxTransition;
 window.onpopstate = function(e) {
     doPushState = !1;
     var t = !1;
-    "generalPopup" == currentState.type ? ($(".dinamic-popup").hasClass("active") && $(".dinamic-popup .popup-content .close-button").click(), "generalPopup" == e.state.type && (t = !0)) : "specialPopup" == currentState.type ? ($(".special-popup").hasClass("active") && $(".special-popup .popup-content .close-button").click(), "specialPopup" == e.state.type && (t = !0)) : t = !0, t ? "capsule" == e.state.type ? (currentState = e.state, changeCapsuleByName(e.state.capsule_name)) : ("generalPopup" == e.state.type || "specialPopup" == e.state.type) && (currentState.timeStamp < e.state.timeStamp ? window.history.forward() : window.history.back()) : currentState = e.state
+    "generalPopup" == currentState.type ? ($(".dinamic-popup").hasClass("active") && $(".dinamic-popup .popup-content .close-button").click(), "generalPopup" == e.state.type && (t = !0)) : "specialPopup" == currentState.type ? ($(".special-popup").hasClass("active") && $(".special-popup .popup-content .close-button").click(), "specialPopup" == e.state.type && (t = !0)) : t = !0, t ? "capsule" == e.state.type ? (currentState = e.state, changeCapsuleByName(e.state.capsule_name), null) : ("generalPopup" == e.state.type || "specialPopup" == e.state.type) && (currentState.timeStamp < e.state.timeStamp ? window.history.forward() : window.history.back()) : currentState = e.state
 };
 var hoverAnimation = !1,
     SvgCurtain = function() {
