@@ -1,5 +1,5 @@
 from django.contrib import admin
-from works.models import Work
+from works.models import Work, WorkPhoto
 
 
 class WorkAdmin(admin.ModelAdmin):
