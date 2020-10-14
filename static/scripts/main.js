@@ -269,7 +269,7 @@ function mod(e, t) {
 }
 
 function home_docReady() {
-    fillCapsuleDataName(), changeActionAdvice("Press & Hold"), isTouchDevice() && $("body").addClass("touch-device"), isTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"), $(".home-social-awards-container").addClass("without-sounds"), $(".special-capsule-button-link").addClass("link-left"))
+    fillCapsuleDataName(), changeActionAdvice("нажми и держи"), isTouchDevice() && $("body").addClass("touch-device"), isTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"), $(".home-social-awards-container").addClass("without-sounds"), $(".special-capsule-button-link").addClass("link-left"))
 }
 
 function reorient() {

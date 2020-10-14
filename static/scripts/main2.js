@@ -21228,7 +21228,7 @@ function mod(e, t) {
 }
 
 function home_docReady() {
-    fillCapsuleDataName(), changeActionAdvice("Press & Hold"), isTouchDevice() && $("body").addClass("touch-device"), isTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"), $(".home-social-awards-container").addClass("without-sounds"), $(".special-capsule-button-link").addClass("link-left"))
+    fillCapsuleDataName(), changeActionAdvice("нажми и держи"), isTouchDevice() && $("body").addClass("touch-device"), isTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"), $(".home-social-awards-container").addClass("without-sounds"), $(".special-capsule-button-link").addClass("link-left"))
 }
 
 function reorient() {
@@ -21672,7 +21672,7 @@ function goToSingle() {
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("hold"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
