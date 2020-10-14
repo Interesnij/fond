@@ -170,7 +170,7 @@ body.custom-theme #transition-curtain-stop-100 {
     stop-color: var(--primary-extra-light-color)
 }
 
-body.custom-theme .ruya-svg-logo {
+body.custom-theme .fond-svg-logo {
     fill: var(--primary-color)
 }
 
@@ -190,7 +190,7 @@ body.custom-theme .top-bar .gems-container .gems-wrapper .gem {
 
 body.custom-theme:not(.touch-device) .hover-white:hover *,
 body.custom-theme:not(.touch-device) * .hover-white:hover *,
-body.custom-theme:not(.touch-device) .top-bar .logo-container:hover svg .ruya-svg-logo,
+body.custom-theme:not(.touch-device) .top-bar .logo-container:hover svg .fond-svg-logo,
 body.custom-theme:not(.touch-device) * .hover-white:hover {
     fill: var(--primary-light-color);
     color: var(--primary-light-color)
@@ -198,7 +198,7 @@ body.custom-theme:not(.touch-device) * .hover-white:hover {
 
 body.custom-theme:not(.touch-device) .hover-white:hover * .line,
 body.custom-theme:not(.touch-device) * .hover-white:hover * .line,
-body.custom-theme:not(.touch-device) .top-bar .logo-container:hover svg .ruya-svg-logo .line,
+body.custom-theme:not(.touch-device) .top-bar .logo-container:hover svg .fond-svg-logo .line,
 body.custom-theme:not(.touch-device) * .hover-white:hover .line {
     background-color: var(--primary-light-color)
 }
@@ -862,7 +862,7 @@ a {
     pointer-events: none
 }
 
-.ruya-gradient {
+.fond-gradient {
     background: var(--gradient-1);
     background: -webkit-gradient(left top, right top, color-stop(0, var(--gradient-1)), color-stop(100%, var(--gradient-2)));
     background: linear-gradient(to right, var(--gradient-1) 0, var(--gradient-2) 100%)
@@ -3668,12 +3668,12 @@ select:-webkit-autofill:focus {
     overflow: hidden
 }
 
-.footer-popup .top-part .dev-phrase .ruya-link {
+.footer-popup .top-part .dev-phrase .fond-link {
     position: relative;
     pointer-events: auto
 }
 
-.footer-popup .top-part .dev-phrase .ruya-word {
+.footer-popup .top-part .dev-phrase .fond-word {
     text-transform: uppercase
 }
 

@@ -22072,11 +22072,11 @@ function makeGeneralHover(e) {
 }
 
 function hoverControlSliderButton(e) {
-    $(e.currentTarget).addClass("ruya-gradient")
+    $(e.currentTarget).addClass("fond-gradient")
 }
 
 function hoverOutControlSliderButton(e) {
-    $(e.currentTarget).removeClass("ruya-gradient")
+    $(e.currentTarget).removeClass("fond-gradient")
 }
 
 function animateCapsulePopup() {
