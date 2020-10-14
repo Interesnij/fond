@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^friends/', include('friends.urls')),
     url(r'^proects/', include('works.urls')),
     url(r'^service/', include('service.urls')),
+    url(r'^about/', include('about.urls')),
 
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 

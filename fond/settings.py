@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'friends',
     'works',
     'service',
+    'about',
     'ckeditor',
     'ckeditor_uploader',
     'imagekit',
