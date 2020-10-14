@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="msapplication-TileImage" content="/static/images/duck-144x144.png">
+    <meta name="theme-color" content="#202020">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#202020">
+    <meta name="apple-mobile-web-app-title" content="Описание сайта">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Название сайта</title>
+    <meta name="description" content="Описание сайта" />
+    <link href="/static/styles/digital.css" rel="stylesheet" />
+    <link  id='wp-block-library-css' href="/static/styles/style.css" media="all" rel="stylesheet" />
+
+</head>
+
+<body class="">
+    <script type="text/javascript">
+        //<![CDATA[
+        function updateBrowserTheme() {
+            var color = getComputedStyle(document.body).getPropertyValue('--primary-light-color');
+            document.querySelector('head meta[name="theme-color"]').content = color;
+            document.querySelector('head meta[name="apple-mobile-web-app-status-bar-style"]').content = color;
+        }
+        updateBrowserTheme();
+        //]]>
+    </script>
+    <script type="text/javascript">
+        var preloadImagesTotal = 4;
+        var preloadImagesLoaded_ = 0;
+
+        function preloadImagesLoaded() {
+            preloadImagesLoaded_++;
+            if (preloadImagesLoaded_ == preloadImagesTotal) {
+                var imagesContainer = document.getElementById('preload-images-container');
+                imagesContainer.style.opacity = '1';
+            }
+        }
+    </script>

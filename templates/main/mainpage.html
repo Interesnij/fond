@@ -1,47 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="msapplication-TileImage" content="/static/images/duck-144x144.png">
-    <meta name="theme-color" content="#202020">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#202020">
-    <meta name="apple-mobile-web-app-title" content="Описание сайта">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Название сайта</title>
-    <meta name="description" content="Описание сайта" />
-    <link href="/static/styles/digital.css" rel="stylesheet" />
-    <link  id='wp-block-library-css' href="/static/styles/style.css" media="all" rel="stylesheet" />
-
-</head>
-
-<body class="">
-    <script type="text/javascript">
-        //<![CDATA[
-        function updateBrowserTheme() {
-            var color = getComputedStyle(document.body).getPropertyValue('--primary-light-color');
-            document.querySelector('head meta[name="theme-color"]').content = color;
-            document.querySelector('head meta[name="apple-mobile-web-app-status-bar-style"]').content = color;
-        }
-        updateBrowserTheme();
-        //]]>
-    </script>
-    <script type="text/javascript">
-        var preloadImagesTotal = 4;
-        var preloadImagesLoaded_ = 0;
-
-        function preloadImagesLoaded() {
-            preloadImagesLoaded_++;
-            if (preloadImagesLoaded_ == preloadImagesTotal) {
-                var imagesContainer = document.getElementById('preload-images-container');
-                imagesContainer.style.opacity = '1';
-            }
-        }
-    </script>
-
+    {% include 'items/navbar.html' %}
     {% include 'items/preload.html' %}
 
     <section class="section-home">
@@ -71,7 +29,7 @@
               </a>
             </div>
         </div>
-        
+
         {% include 'items/slider.html' %}
 
         <div class="background-bar">
@@ -112,7 +70,7 @@
         <div class="gems-container not-complete credits-container cursor-customized" data-id-popup="credits-popup">
             <div class="gems-wrapper"></div>
             <div class="gems-text">
-                <p class="font-menu font-gray">All the sections must be visited</p>
+                <p class="font-menu font-gray">Все отделы нужно посетить</p>
             </div>
         </div>
         <div class="menu-button js-open-popup cursor-customized  general-hover hover-white">
@@ -302,6 +260,8 @@
     <div class="credits-popup">
       {% include 'items/credits_popup.html' %}
     </div>
+
+
     <div class="gems-popup menu-popup">
         <div class="popup-content">
             <div class="close-button cursor-customized">
@@ -323,26 +283,4 @@
 
     {% include 'items/contact_popup.html' %}
 
-    <div class="rotate-device-container">
-        <div class="rotate-device">
-            <p class="font-menu font-gray">Поверните свое устройство</p>
-        </div>
-    </div>
-    <div class="cookies-container">
-        <div class="cookies-content">
-            <p class="font-h6 font-gray">
-              Этот веб-сайт использует файлы cookie. Закрывая это сообщение, вы принимаете нашу политику использования файлов cookie.
-            </p>
-        </div>
-        <div class="cookies-close-container">
-          <svg enable-background="new 0 0 100 100" viewBox="0 0 100 100" xml:space="preserve">
-                <polygon fill="#010101" points="77.6,21.1 49.6,49.2 21.5,21.1 19.6,23 47.6,51.1 19.6,79.2 21.5,81.1 49.6,53 77.6,81.1 79.6,79.2   51.5,51.1 79.6,23 "></polygon>
-            </svg></div>
-    </div>
-    <footer> </footer>
-    <script src="/static/scripts/audio.js"></script>
-    <script defer src="/static/scripts/main.js"></script>
-    <script defer src="/static/scripts/progressive-image.js"></script>
-</body>
-
-</html>
+    {% include 'items/footer_script.html' %}
