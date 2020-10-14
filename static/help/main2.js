@@ -21672,7 +21672,7 @@ function goToSingle() {
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("нажми и держи"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
@@ -21681,12 +21681,12 @@ function endCapsuleLoop() {
             if (capsuleAnimationFinished) {
                 buttonPushed = !1, $(".capsules-container .capsule").removeClass("showing"), $currentCapsule.addClass("showing"), $(".section-home .navigate-single-button-container .navigate-single-button .navigate-single-button-advice").removeClass("blink"), stopSound(audioActive), playSound(capsuleLoadedAudio), playSound(regularAudio), fadeOutMainTitle(!0), $(".main-title-container p").removeClass("blink");
                 var e;
-                "work" == $currentCapsule.attr("data-name") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), changeColorMainTitle("font-black"), openSingleOfSectionPopup(), $(" .section-home .background-bar .progress-bar").css("left", "-100%"), changeActionAdvice("Press & Hold"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow")
+                "work" == $currentCapsule.attr("data-name") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), changeColorMainTitle("font-black"), openSingleOfSectionPopup(), $(" .section-home .background-bar .progress-bar").css("left", "-100%"), changeActionAdvice("нажми и держи"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow")
             }
         } else {
             buttonPushed = !1;
             var e;
-            "work" == $currentCapsule.attr("data-name") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), appearHeaderAndFooter(), changeActionAdvice("Press & Hold"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow"), stopSound(audioActive), playSound(regularAudio);
+            "work" == $currentCapsule.attr("data-name") ? (showWorkSlider(), e = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()) : e = $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(e), appearHeaderAndFooter(), changeActionAdvice("нажми и держи"), isTouchDevice() || $(".custom-cursor-wrapper").css("display", "block"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink-slow"), stopSound(audioActive), playSound(regularAudio);
             var t = $(".section-home .background-bar .progress-bar");
             TweenMax.to(t, .3, {
                 left: "-100%",
@@ -21960,8 +21960,8 @@ function prepareCapsuleByName(e, t) {
     var n;
     $(".capsules-container .capsule").removeClass("current"), $('.capsules-container .capsule[data-name="' + e + '"]').addClass("current"), $currentCapsule = $(".capsules-container .capsule.current"), $(".home-center-container .special-capsule-link").attr("data-menu") == e ? $(".home-center-container, .bottom-bar .special-capsule-button-link").addClass("hidden") : $(".home-center-container, .bottom-bar .special-capsule-button-link").removeClass("hidden");
     var i;
-    if ("work" == e) {
-        $(".main-title-container p").css("font-size", "22vw"), showWorkSlider(), $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
+    if ("Проекты" == e) {
+        $(".main-title-container p").css("font-size", "12vw"), showWorkSlider(), $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
         var r = $($currentCapsule.find(".capsule-popup")[0]).attr("data-popup-name");
         $(".navigate-single-button-container").attr("data-open-popup", r), i = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
     } else hideWorkSlider(), $(".navigate-single-button-container").removeAttr("data-open-popup"), $(".section-home .navigate-single-button-container").removeAttr("data-work-index"), i = $currentCapsule.find(".capsule-main-title").text();
@@ -22628,7 +22628,7 @@ function changeRandomTheme() {
     do var t = Math.floor(Math.random() * possibleThemes.length); while (e == possibleThemes[t]);
     e = possibleThemes.splice(t, 1), changeTheme(e[0]);
     var n = .8;
-    $(".bottom-bar .color-container .color-text").text("Ta-da!"), TweenLite.set(".bottom-bar .color-container .color-text", {
+    $(".bottom-bar .color-container .color-text").text("Чик!"), TweenLite.set(".bottom-bar .color-container .color-text", {
         y: 0,
         opacity: 0
     }), TweenLite.to(".bottom-bar .color-container .color-text", 1.2 * n, {
@@ -22677,7 +22677,14 @@ function changeBoringText() {
     if ("home" == $currentCapsule.attr("data-name")) {
         var e = [],
             t = 0;
-        0 == nextBoringText ? e = ["Эй", "ты ", "здесь"] : 1 == nextBoringText ? e = ["Нажми", "на", "меню", "сверху"] : 2 == nextBoringText ? e = ["не", "скучай", "чувак"] : 3 == nextBoringText ? e = ["я", "щас", "усну", "если", "так", "все", "будет", ":-)))"] : 4 == nextBoringText ? e = ["что", "же ", "такое", "это всё"] : 5 == nextBoringText ? e = ["слушай", "а", "ты", "не", "робот?"] : 6 == nextBoringText ? e = ["смотри", "меня", "всего", "я", "крут", "и", "скромн"] : (e = ["What", "is", "the", "meaning", "of", "life?", "Â·Â·Â·"], nextBoringText = -1), t = e.length + 2, t > 0 && (animateMainTitleWithText(e), nextBoringText++, setTimeout(changeBoringText, 1e3 * t))
+        0 == nextBoringText ? e = ["Эй", "ты ", "здесь"] : 1 == nextBoringText ?
+        e = ["Нажми", "на", "меню", "сверху"] : 2 == nextBoringText ?
+        e = ["не", "скучай", "чувак"] : 3 == nextBoringText ?
+        e = ["я", "щас", "усну", "если", "так", "все", "будет", ":-)))"] : 4 == nextBoringText ?
+        e = ["что", "же ", "такое", "это всё"] : 5 == nextBoringText ?
+        e = ["слушай", "а", "ты", "не", "робот?"] : 6 == nextBoringText ?
+        e = ["смотри", "меня", "всего", "я", "крут", "и", "скромн"] :
+        t = e.length + 2, t > 0 && (animateMainTitleWithText(e), nextBoringText++, setTimeout(changeBoringText, 1e3 * t))
     }
 }
 
@@ -22743,9 +22750,43 @@ var _createClass = function() {
             return n && e(t.prototype, n), i && e(t, i), t
         }
     }(),
-    capsuleAnimationFinished, durationOfVideo, $currentCapsule, durationOfActionSound, regularAudio, actionAudio, hoverAudio, capsuleLoadedAudio, soundsMuted, audioActive, audioContext, audioBuffers, audioPlaying, gainNode, soundsMutedByContact, inTransition, $transitionCurtain, overlay, curtainTransitionDuration, curtainPointsDelayMax, curtainDelayPerPath, SCROLLINC, goingToScrollTop, smoothScrolling, scrollEnabled = !0,
-    enableParallax, iScrollPos = 0,
-    bottomOfButton, currentFormSlide, tweenPress, pressedHold, soundCapsulePlayed, canResizeCanvas, firstPushState, doPushState, currentState, ease = {
+    capsuleAnimationFinished,
+    durationOfVideo,
+    $currentCapsule,
+    durationOfActionSound,
+    regularAudio,
+    actionAudio,
+    hoverAudio,
+    capsuleLoadedAudio,
+    soundsMuted,
+    audioActive,
+    audioContext,
+    audioBuffers,
+    audioPlaying,
+    gainNode,
+    soundsMutedByContact,
+    inTransition,
+    $transitionCurtain,
+    overlay,
+    curtainTransitionDuration,
+    curtainPointsDelayMax,
+    curtainDelayPerPath,
+    SCROLLINC,
+    goingToScrollTop,
+    smoothScrolling,
+    scrollEnabled = !0,
+    enableParallax,
+    iScrollPos = 0,
+    bottomOfButton,
+    currentFormSlide,
+    tweenPress,
+    pressedHold,
+    soundCapsulePlayed,
+    canResizeCanvas,
+    firstPushState,
+    doPushState,
+    currentState,
+    ease = {
         exponentialIn: function(e) {
             return 0 == e ? e : Math.pow(2, 10 * (e - 1))
         },
@@ -22779,14 +22820,31 @@ var _createClass = function() {
             return Math.pow(e - 1, 3) * (1 - e) + 1
         }
     },
-    workSlideMove, preloadFinished, canvasImages, canvasImageSrc, asociatedArrayOfImages, currentCanvas, lastHoverAudio, preloadImageAudio, closeGeneralPopupInstantly = !1,
+    workSlideMove,
+    preloadFinished,
+    canvasImages,
+    canvasImageSrc,
+    asociatedArrayOfImages,
+    currentCanvas,
+    lastHoverAudio,
+    preloadImageAudio,
+    closeGeneralPopupInstantly = !1,
     form_reName = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/,
     form_reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     form_rePhone = /^\+?[0-9,' ',-]{0,16}$/,
     sending_form = !1,
     sent_form = !1,
     RE_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    animationOfPopupCredits, tweenAnimateColorCircle, tweenRotateColorCircle, tweenAnimateMenuCircle, tweenWaitWand, tweenActionWand, tweenWaitGems, arrowRight, intervalMenu, intervalGems;
+    animationOfPopupCredits,
+    tweenAnimateColorCircle,
+    tweenRotateColorCircle,
+    tweenAnimateMenuCircle,
+    tweenWaitWand,
+    tweenActionWand,
+    tweenWaitGems,
+    arrowRight,
+    intervalMenu,
+    intervalGems;
 $(window).on("load", function() {
     load_home && home_docLoad(), load_home = !0, $(".fond-lazy").length > 0 && $(".fond-lazy").each(function(e, t) {
         $(t).attr("src", $(t).attr("data-src"))
@@ -22856,7 +22914,11 @@ var hoverAnimation = !1,
             }
         }]), e
     }(),
-    textureFloatingObjectpath, heightFloatingObject, widthFloatingObject, scrollForObjects, oldTimeGravity = 0,
+    textureFloatingObjectpath,
+    heightFloatingObject,
+    widthFloatingObject,
+    scrollForObjects,
+    oldTimeGravity = 0,
     lastY = 0,
     animatingSlide = !1,
     contactObject = {
