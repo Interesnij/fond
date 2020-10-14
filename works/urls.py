@@ -1,4 +1,4 @@
-from proects.views import WorksListView, WorkView
+from works.views import WorksListView, WorkView
 from django.conf.urls import url
 
 
