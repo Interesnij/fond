@@ -713,7 +713,7 @@ function goToSingle() {
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("hold"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("удерживай"), changeActionAdvice("hold the door"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
