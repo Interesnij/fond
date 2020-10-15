@@ -364,7 +364,7 @@ function home_bindEvents() {
     }),
 
     on('.bottom-bar', 'click', '.sound-container', function() {switchVolume()})
-    on('body', 'click', '.special-link', function() {console.log("changeCapsule"), changeCapsule})
+    on('body', 'click', '.special-link', function() {console.log("changeCapsule"), changeCapsule(this)})
     //$(".special-link").on("click", changeCapsule),
     $(".special-popup").on("click", ".menu-container .menu-item", changeCapsule),
     $(".dinamic-popup").on("click", ".popup-content .close-button", closeGeneralPopup),
