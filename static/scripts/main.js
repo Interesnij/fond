@@ -300,6 +300,7 @@ function home_resize() {
     window.innerWidth <= 1025 && (e = .8), pivot.scale.set(e, e, e)
 }
 
+function on(elSelector,eventName,selector,fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while(el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});};
 function home_bindEvents() {
     $(".js-open-popup").click(stopBoringText),
     isTouchDevice() ? (
@@ -343,8 +344,8 @@ function home_bindEvents() {
                      ),
         $(window).scroll(animateGeneralElements),
         $(window).scroll(animateShowVideos),
-        document.body.querySelector(".top-bar").on("click", ".gems-container.not-complete", 
-        function() {
+        on('.top-bar', 'click', '.gems-container.not-complete', function() {
+  
         var e = 1,
             t = $(".gems-container .gems-text").innerWidth() * -.25;
         TweenLite.set(".gems-container .gems-text", {
