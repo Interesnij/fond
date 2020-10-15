@@ -362,7 +362,7 @@ function home_bindEvents() {
             delay: 2 * e
         })
     }),
-    on('body', 'click', '.bottom-bar .sound-container', function() {switchVolume})
+    on('.bottom-bar', 'click', '.sound-container', function() {switchVolume})
 
     //$(".bottom-bar .sound-container").click(switchVolume),
     $(".special-link").on("click", changeCapsule),
