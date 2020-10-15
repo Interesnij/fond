@@ -362,7 +362,7 @@ function home_bindEvents() {
             delay: 2 * e
         })
     }),
-    on('.bottom-bar', 'click', '.sound-container', function() {console.log("switchVolume"), switchVolume(this)})
+    on('.bottom-bar', 'click', '.sound-container', function() {console.log("switchVolume"), switchVolume()})
 
     //$(".bottom-bar .sound-container").click(switchVolume),
     $(".special-link").on("click", changeCapsule),
@@ -953,8 +953,7 @@ function stopSound(e) {
     return isTouchDevice() ? !0 : void($(".section-home").hasClass("is-404") || void 0 != audioPlaying[e.src] && (audioPlaying[e.src].stop(), delete audioPlaying[e.src]))
 }
 
-function switchVolume(e) {
-    e.stopPropagation(),
+function switchVolume() {
     soundsMuted ? unMuteSounds() : muteSounds()
 }
 
