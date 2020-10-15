@@ -288,7 +288,10 @@ function home_initializeGlobalVariables() {
     lastHoverAudio = 0,
     firstPushState = !0,
     doPushState = !0,
+
     main_title_container = document.body.querySelector(".main-title-container");
+    top_bar = document.body.querySelector(".top-bat");
+    bottom_bar = document.body.querySelector(".bottom-bar");
 }
 
 function home_resize() {
@@ -1499,8 +1502,11 @@ function animateCapsulePopup() {
         opacity: 0,
         y: 20
     }),
-    $(".bottom-bar, .top-bar").css("z-index", "9"),
+    //$(".bottom-bar, .top-bar").css("z-index", "9"),
     //$(".main-title-container").css("z-index", "7"),
+    
+    top_bar.style.zIndex = "9",
+    bottom_bar.style.zIndex = "9",
     main_title_container.style.zIndex = "7",
     $(".bottom-bar .center-container p").text("Листайте вниз"),
     $(".bottom-bar .center-container").addClass("blink"),
