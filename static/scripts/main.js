@@ -1504,13 +1504,17 @@ function animateCapsulePopup() {
     }),
     //$(".bottom-bar, .top-bar").css("z-index", "9"),
     //$(".main-title-container").css("z-index", "7"),
+    //$(".bottom-bar .center-container p").text("Листайте вниз"),
+    //$(".bottom-bar .center-container").addClass("blink"),
+    //$(".bottom-bar .home-center-container").css("display", "none"),
 
     top_bar.style.zIndex = "9",
     bottom_bar.style.zIndex = "9",
     main_title_container.style.zIndex = "7",
-    $(".bottom-bar .center-container p").text("Листайте вниз"),
-    $(".bottom-bar .center-container").addClass("blink"),
-    $(".bottom-bar .home-center-container").css("display", "none"),
+    bottom_bar.querySelector(".center-container p").innerHTML = "Листайте вниз",
+    bottom_bar.querySelector(".center-container").classList.add("blink"),
+    bottom_bar.querySelector(".home-center-container").style.display = "none",
+
     setTimeout(function() {
         fadeInMainTitle()
     }, 500),
