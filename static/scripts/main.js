@@ -2099,7 +2099,7 @@ function animateRotateGems() {
 }
 
 function changeBoringText() {
-    if ("home" == $currentCapsule.attr("data-name")) {
+    if ("home" == $currentCapsule.getAttribute("data-name")) {
         var e = [],
             t = 0;
         0 == nextBoringText ? e = ["Привет", "а Вы", "здесь?"] : 1 == nextBoringText ?
