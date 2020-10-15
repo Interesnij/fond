@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="msapplication-TileImage" content="/static/images/duck-144x144.png">
+    <meta name="theme-color" content="#202020">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#202020">
+    <meta name="apple-mobile-web-app-title" content="Описание сайта">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>О фонде</title>
+    <meta name="description" content="Описание сайта" />
+    <link href="/static/styles/digital.css" rel="stylesheet" />
+    <link id='wp-block-library-css' href="/static/styles/style.css" media="all" rel="stylesheet" />
+
+</head>
+
+<body class="">
+    <script type="text/javascript">
+        //<![CDATA[
+        function updateBrowserTheme() {
+            var color = getComputedStyle(document.body).getPropertyValue('--primary-light-color');
+            document.querySelector('head meta[name="theme-color"]').content = color;
+            document.querySelector('head meta[name="apple-mobile-web-app-status-bar-style"]').content = color;
+        }
+        updateBrowserTheme();
+        //]]>
+    </script>
+    <script type="text/javascript">
+        var preloadImagesTotal = 4;
+        var preloadImagesLoaded_ = 0;
+
+        function preloadImagesLoaded() {
+            preloadImagesLoaded_++;
+            if (preloadImagesLoaded_ == preloadImagesTotal) {
+                var imagesContainer = document.getElementById('preload-images-container');
+                imagesContainer.style.opacity = '1';
+            }
+        }
+    </script>
+
+    {% include 'items/preload.html' %}
+
+    <section class="section-home">
+        {% include 'main/section.html' %}
+    </section>
+
+    <div class="fo-canvas"></div>
+
+    {% include 'items/top_bar.html' %}
+
+    {% include 'items/bottom_bar.html' %}
+
+    <div class="main-title-container">
+        <p class="font-liquido-h1 font-white content-animable"></p>
+    </div>
+    <div class="dinamic-popup popup"></div>
+    <div class="special-popup popup"></div>
+
+    <svg class="transition-curtain" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop id="transition-curtain-stop-0" offset="0%" /><stop id="transition-curtain-stop-100" offset="100%" /></linearGradient></defs><path class="capa capa3" style="fill:url(#grad1)"></path></svg>
+    <div class="custom-cursor-wrapper">
+        <div class="custom-cursor">
+            <div class="cursor-symbol">
+                <div class="stick stick-1"></div>
+                <div class="stick stick-2"></div>
+            </div>
+            <div class="cursor-text">
+                <p class="cursor-text-action font-h7"></p>
+                <p class="cursor-text-details font-h7"></p>
+            </div>
+        </div>
+    </div>
+    <div class="audios-container">
+      <audio class="audio_regular" src="/static/audio/bg.mp3" loop preload="auto"></audio>
+      <audio class="audio_action" src="/static/audio/action.mp3" loop preload="auto"></audio>
+      <audio class="audio_hover" src="/static/audio/hover1.mp3" preload="auto"></audio>
+      <audio class="audio_hover" src="/static/audio/hover2.mp3" preload="auto"></audio>
+      <audio class="audio_hover" src="/static/audio/hover3.mp3" preload="auto"></audio>
+      <audio class="audio_hover" src="/static/audio/hover4.mp3" preload="auto"></audio>
+      <audio class="audio_hover" src="/static/audio/hover5.mp3" preload="auto"></audio>
+      <audio class="audio_preload_image" src="/static/audio/hover1.mp3" preload="auto"></audio>
+      <audio class="audio_preload_image" src="/static/audio/hover2.mp3" preload="auto"></audio>
+      <audio class="audio_preload_image" src="/static/audio/hover3.mp3" preload="auto"></audio>
+      <audio class="audio_preload_image" src="/static/audio/hover4.mp3" preload="auto"></audio>
+      <audio class="audio_preload_image" src="/static/audio/hover5.mp3" preload="auto"></audio>
+      <audio class="audio_capsule_loaded" src="/static/audio/capsule-loaded.mp3" preload="auto"></audio>
+    </div>
+
+    <div class="capsules-container">
+      <!-- not-showed: не показывать в меню, showing: загружать по умолчанию, current: текущая страница -->
+        <div class="capsule not-showed " data-color="#ffffff" data-name="home" data-href="/">
+            {% include 'items/home.html' %}
+        </div>
+        <div class="capsule current showing not-showed " data-color="#0263ff" data-name="О фонде" data-href="/about/">
+            {% include 'items/about.html' %}
+        </div>
+        <div class="capsule " data-color="#f2545b" data-name="Проекты" data-href="/work/">
+            {% include 'items/proects.html' %}
+        </div>
+        <div class="capsule " data-color="#ffc857" data-name="Друзья" data-href="/partners/">
+            {% include 'items/friends.html' %}
+        </div>
+        <div class="capsule " data-color="#8c3ba7" data-name="Сервис" data-href="/awards/">
+            {% include 'items/service.html' %}
+        </div>
+        <div class="capsule not-showed " data-color="#540000" data-name="Пункт меню" data-href="/awwwards/">
+            {% include 'items/other_page.html' %}
+        </div>
+    </div>
+    <div class="credits-popup">
+      {% include 'items/credits_popup.html' %}
+    </div>
+
+    <div class="gems-popup menu-popup">
+        <div class="popup-content">
+            <div class="close-button cursor-customized">
+                <div class="cross-container">
+                    <div class="stick stick1"></div>
+                    <div class="stick stick2"></div>
+                </div>
+                <div class="back-container">
+                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
+                </div>
+            </div>
+            <div class="general-container">
+                <nav class="menu-container">
+                    <ul></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    {% include 'items/contact_popup.html' %}
+
+    {% include 'items/footer_script.html' %}

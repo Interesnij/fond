@@ -8,7 +8,7 @@ from generic.mixins import CategoryListMixin
 
 
 class AboutView(TemplateView, CategoryListMixin):
-    template_name = "about_v2.html"
+    template_name = "about.html"
 
     def get_context_data(self,**kwargs):
         context=super(AboutView,self).get_context_data(**kwargs)
