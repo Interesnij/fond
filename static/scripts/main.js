@@ -343,7 +343,7 @@ function home_bindEvents() {
                      ),
         $(window).scroll(animateGeneralElements),
         $(window).scroll(animateShowVideos),
-        $(".top-bar").on("click", ".gems-container.not-complete",
+        top_bar.on("click", ".gems-container.not-complete",
         function() {
         var e = 1,
             t = $(".gems-container .gems-text").innerWidth() * -.25;
@@ -1502,11 +1502,6 @@ function animateCapsulePopup() {
         opacity: 0,
         y: 20
     }),
-    //$(".bottom-bar, .top-bar").css("z-index", "9"),
-    //$(".main-title-container").css("z-index", "7"),
-    //$(".bottom-bar .center-container p").text("Листайте вниз"),
-    //$(".bottom-bar .center-container").addClass("blink"),
-    //$(".bottom-bar .home-center-container").css("display", "none"),
 
     top_bar.style.zIndex = "9",
     bottom_bar.style.zIndex = "9",
