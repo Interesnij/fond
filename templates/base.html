@@ -46,33 +46,6 @@
 
 		{% block content %}
 		{% endblock %}
-
-		<div class="credits-popup">
-      {% include 'items/credits_popup.html' %}
-    </div>
-
-    <div class="gems-popup menu-popup">
-        <div class="popup-content">
-            <div class="close-button cursor-customized">
-                <div class="cross-container">
-                    <div class="stick stick1"></div>
-                    <div class="stick stick2"></div>
-                </div>
-                <div class="back-container">
-                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
-                </div>
-            </div>
-            <div class="general-container">
-                <nav class="menu-container">
-                    <ul></ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    {% include 'items/contact_popup.html' %}
-
-    {% include 'items/footer_script.html' %}
     
     <div class="dinamic-popup popup"></div>
     <div class="special-popup popup"></div>
@@ -105,3 +78,30 @@
       <audio class="audio_preload_image" src="/static/audio/hover5.mp3" preload="auto"></audio>
       <audio class="audio_capsule_loaded" src="/static/audio/capsule-loaded.mp3" preload="auto"></audio>
     </div>
+
+		<div class="credits-popup">
+      {% include 'items/credits_popup.html' %}
+    </div>
+
+    <div class="gems-popup menu-popup">
+        <div class="popup-content">
+            <div class="close-button cursor-customized">
+                <div class="cross-container">
+                    <div class="stick stick1"></div>
+                    <div class="stick stick2"></div>
+                </div>
+                <div class="back-container">
+                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
+                </div>
+            </div>
+            <div class="general-container">
+                <nav class="menu-container">
+                    <ul></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    {% include 'items/contact_popup.html' %}
+
+    {% include 'items/footer_script.html' %}
