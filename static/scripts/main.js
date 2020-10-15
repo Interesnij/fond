@@ -287,7 +287,8 @@ function home_initializeGlobalVariables() {
     canResizeCanvas = !0,
     lastHoverAudio = 0,
     firstPushState = !0,
-    doPushState = !0
+    doPushState = !0,
+    main_title_container = document.body.querySelector(".main-title-container");
 }
 
 function home_resize() {
@@ -1500,7 +1501,8 @@ function animateCapsulePopup() {
     }),
     $(".bottom-bar, .top-bar").css("z-index", "9"),
     $(".main-title-container").css("z-index", "7"),
-    $(".bottom-bar .center-container p").text("Листайте вниз"),
+    //$(".bottom-bar .center-container p").text("Листайте вниз"),
+    main_title_container.innerHTML = "Листайте вниз",
     $(".bottom-bar .center-container").addClass("blink"),
     $(".bottom-bar .home-center-container").css("display", "none"),
     setTimeout(function() {
