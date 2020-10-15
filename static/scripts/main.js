@@ -21015,7 +21015,7 @@ function mod(e, t) {
 function home_docReady() {
     fillCapsuleDataName(),
     changeActionAdvice("нажми и держи"),
-    isTouchDevice() && $("body").addClass("touch-device"), i
+    isTouchDevice() && $("body").addClass("touch-device"),
     sTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"),
                        $(".home-social-awards-container").addClass("without-sounds"),
                        $(".special-capsule-button-link").addClass("link-left"))
