@@ -1,3 +1,7 @@
+<div class="capsule-floating-object">
+  <img src="/static/images/work.png" class="image-path"></img>
+</div>
+
 {% for object in works %}
 <div class="capsule-popup work-popup" data-popup-name="{{ object.slug }}">
     <div class="popup-content is-a-work">
@@ -47,3 +51,13 @@
 </div>
 
 {% endfor %}
+
+
+{% include 'items/capsule_icon.html' %}
+
+<div class="capsule-three-background-path" data-three-path="/static/images/objects/hand1.obj" data-scale="1" data-rotation="0"></div>
+<div class="meta-data">
+    <p class="title">Проекты | Фонд мира</p>
+    <p class="description">Фонд организован для помощи нравственным движениям в организации эффектных интернет-ресурсов.</p>
+    <div class="image" data-src="/static/images/thumb_black.jpg"></div>
+</div>
