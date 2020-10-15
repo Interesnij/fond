@@ -363,8 +363,8 @@ function home_bindEvents() {
         })
     }),
     on('body', 'click', '.bottom-bar .sound-container', function() {switchVolume})
-    
-    $(".bottom-bar .sound-container").click(switchVolume),
+
+    //$(".bottom-bar .sound-container").click(switchVolume),
     $(".special-link").on("click", changeCapsule),
     $(".special-popup").on("click", ".menu-container .menu-item", changeCapsule),
     $(".dinamic-popup").on("click", ".popup-content .close-button", closeGeneralPopup),
