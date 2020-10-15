@@ -343,7 +343,7 @@ function home_bindEvents() {
                      ),
         $(window).scroll(animateGeneralElements),
         $(window).scroll(animateShowVideos),
-        top_bar.on("click", ".gems-container.not-complete",
+        document.body.querySelector(".top-bar").on("click", ".gems-container.not-complete", 
         function() {
         var e = 1,
             t = $(".gems-container .gems-text").innerWidth() * -.25;
