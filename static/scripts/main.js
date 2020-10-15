@@ -20960,229 +20960,11 @@ var container, camera, scene, renderer, objectLoader, objectRendered, leftLight,
     oldMouseX = null,
     dif_mouse_move = 0;
 init(), animate();
+
+
 /*! jQuery & Zepto Lazy v1.7.5 - http://jquery.eisbehr.de/lazy - MIT&GPL-2.0 license - Copyright 2012-2017 Daniel 'Eisbehr' Kern */
-! function(t, e) {
-    "use strict";
+!function(P,d){"use strict";function o(p,y,z,t,e){function r(){var n,i,o,l;N=1<P.devicePixelRatio,a(z),0<=y.delay&&setTimeout(function(){u(!0)},y.delay),(y.delay<0||y.combined)&&(t.e=(n=y.throttle,i=function(t){"resize"===t.type&&(D=I=-1),u(t.all)},l=0,function(t,e){function r(){l=+new Date,i.call(p,t)}var a=new Date-l;o&&clearTimeout(o),n<a||!y.enableThrottle||e?r():o=setTimeout(r,n-a)}),t.a=function(t){a(t),z.push.apply(z,t)},t.g=function(){return z=Q(z).filter(function(){return!Q(this).data(y.loadedName)})},t.f=function(t){for(var e=0;e<t.length;e++){var r=z.filter(function(){return this===t[e]});r.length&&u(!1,r)}},u(),Q(y.appendScroll).on("scroll."+e+" resize."+e,t.e))}function a(t){for(var e=y.defaultImage,r=y.placeholder,a=y.imageBase,n=y.srcsetAttribute,i=y.loaderAttribute,o=y._f||{},l=0,u=(t=Q(t).filter(function(){var t=Q(this),e=w(this);return!t.data(y.handledName)&&(t.attr(y.attribute)||t.attr(n)||t.attr(i)||o[e]!==d)}).data("plugin_"+y.name,p)).length;l<u;l++){var f=Q(t[l]),c=w(t[l]),s=f.attr(y.imageBaseAttribute)||a;c===O&&s&&f.attr(n)&&f.attr(n,function(t,e){if(e){var r=t.split(",");t="";for(var a=0,n=r.length;a<n;a++)t+=e+r[a].trim()+(a!==n-1?",":"")}return t}(f.attr(n),s)),o[c]===d||f.attr(i)||f.attr(i,o[c]),c===O&&e&&!f.attr(R)?f.attr(R,e):c===O||!r||f.css(x)&&"none"!==f.css(x)||f.css(x,"url('"+r+"')")}}function u(t,e){if(!z.length)return y.autoDestroy&&p.destroy(),0;for(var r,a,n,i,o,l,u,f,c,s,d,A=e||z,g=!1,h=y.imageBase||"",m=y.srcsetAttribute,b=y.handledName,v=0;v<A.length;v++){(t||e||(l=A[v],c=void 0,u=l.getBoundingClientRect(),f=y.scrollDirection,c=y.threshold,s=(0<=I?I:I=Q(P).height())+c>u.top&&-c<u.bottom,d=(0<=D?D:D=Q(P).width())+c>u.left&&-c<u.right,"vertical"===f?s:("horizontal"===f||s)&&d))&&(r=Q(A[v]),a=w(A[v]),n=r.attr(y.attribute),i=r.attr(y.imageBaseAttribute)||h,o=r.attr(y.loaderAttribute),r.data(b)||y.visibleOnly&&!r.is(":visible")||!((n||r.attr(m))&&(a===O&&(i+n!==r.attr(R)||r.attr(m)!==r.attr(_))||a!==O&&i+n!==r.css(x))||o)||(g=!0,r.data(b,!0),function(e,t,r,a){++T;var n=function(){L("onError",e),B(),n=Q.noop};L("beforeLoad",e);var i=y.attribute,o=y.srcsetAttribute,l=y.sizesAttribute,u=y.retinaAttribute,f=y.removeAttribute,c=y.loadedName,s=e.attr(u);{var d,A,g;a?(d=function(){f&&e.removeAttr(y.loaderAttribute),e.data(c,!0),L(E,e),setTimeout(B,1),d=Q.noop},e.off(C).one(C,n).one(F,d),L(a,e,function(t){t?(e.off(F),d()):(e.off(C),n())})||e.trigger(C)):((A=Q(new Image)).one(C,n).one(F,function(){e.hide(),t===O?e.attr(S,A.attr(S)).attr(_,A.attr(_)).attr(R,A.attr(R)):e.css(x,"url('"+A.attr(R)+"')"),e[y.effect](y.effectTime),f&&(e.removeAttr(i+" "+o+" "+u+" "+y.imageBaseAttribute),l!==S&&e.removeAttr(l)),e.data(c,!0),L(E,e),A.remove(),B()}),g=(N&&s?s:e.attr(i))||"",A.attr(S,e.attr(l)).attr(_,e.attr(o)).attr(R,g?r+g:null),A.complete&&A.trigger(F))}}(r,a,i,o)))}g&&(z=Q(z).filter(function(){return!Q(this).data(b)}))}function w(t){return t.tagName.toLowerCase()}function B(){--T,z.length||T||L("onFinishedAll")}function L(t,e,r){return!!(t=y[t])&&(t.apply(p,[].slice.call(arguments,1)),!0)}var T=0,D=-1,I=-1,N=!1,E="afterLoad",F="load",C="error",O="img",R="src",_="srcset",S="sizes",x="background-image";"event"===y.bind||n?r():Q(P).on(F+"."+e,r)}function f(t,e){var r=this,a=Q.extend({},r.config,e),n={},i=a.name+"-"+ ++l;return r.config=function(t,e){return e===d?a[t]:(a[t]=e,r)},r.addItems=function(t){return n.a&&n.a("string"===Q.type(t)?Q(t):t),r},r.getItems=function(){return n.g?n.g():{}},r.update=function(t){return n.e&&n.e({},!t),r},r.force=function(t){return n.f&&n.f("string"===Q.type(t)?Q(t):t),r},r.loadAll=function(){return n.e&&n.e({all:!0},!0),r},r.destroy=function(){return Q(a.appendScroll).off("."+i,n.e),Q(P).off("."+i),n={},d},o(r,a,t,n,i),a.chainable?t:r}var Q=P.jQuery||P.Zepto,l=0,n=!1;Q.fn.Lazy=Q.fn.lazy=function(t){return new f(this,t)},Q.Lazy=Q.lazy=function(t,e,r){if(Q.isFunction(e)&&(r=e,e=[]),Q.isFunction(r)){t=Q.isArray(t)?t:[t],e=Q.isArray(e)?e:[e];for(var a=f.prototype.config,n=a._f||(a._f={}),i=0,o=t.length;i<o;i++)a[t[i]]!==d&&!Q.isFunction(a[t[i]])||(a[t[i]]=r);for(var l=0,u=e.length;l<u;l++)n[e[l]]=t[0]}},f.prototype.config={name:"lazy",chainable:!0,autoDestroy:!0,bind:"load",threshold:500,visibleOnly:!1,appendScroll:P,scrollDirection:"both",imageBase:null,defaultImage:"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",placeholder:null,delay:-1,combined:!1,attribute:"data-src",srcsetAttribute:"data-srcset",sizesAttribute:"data-sizes",retinaAttribute:"data-retina",loaderAttribute:"data-loader",imageBaseAttribute:"data-imagebase",removeAttribute:!0,handledName:"handled",loadedName:"loaded",effect:"show",effectTime:0,enableThrottle:!0,throttle:250,beforeLoad:d,afterLoad:d,onError:d,onFinishedAll:d},Q(P).on("load",function(){n=!0})}(window);
 
-    function r(r, a, i, l, u) {
-        function f() {
-            L = t.devicePixelRatio > 1, c(i), a.delay >= 0 && setTimeout(function() {
-                s(!0)
-            }, a.delay), (a.delay < 0 || a.combined) && (l.e = v(a.throttle, function(t) {
-                "resize" === t.type && (w = B = -1), s(t.all)
-            }), l.a = function(t) {
-                c(t), i.push.apply(i, t)
-            }, l.g = function() {
-                return i = n(i).filter(function() {
-                    return !n(this).data(a.loadedName)
-                })
-            }, l.f = function(t) {
-                for (var e = 0; e < t.length; e++) {
-                    var r = i.filter(function() {
-                        return this === t[e]
-                    });
-                    r.length && s(!1, r)
-                }
-            }, s(), n(a.appendScroll).on("scroll." + u + " resize." + u, l.e))
-        }
-
-        function c(t) {
-            var i = a.defaultImage,
-                o = a.placeholder,
-                l = a.imageBase,
-                u = a.srcsetAttribute,
-                f = a.loaderAttribute,
-                c = a._f || {};
-            t = n(t).filter(function() {
-                var t = n(this),
-                    r = m(this);
-                return !t.data(a.handledName) && (t.attr(a.attribute) || t.attr(u) || t.attr(f) || c[r] !== e)
-            }).data("plugin_" + a.name, r);
-            for (var s = 0, d = t.length; s < d; s++) {
-                var A = n(t[s]),
-                    g = m(t[s]),
-                    h = A.attr(a.imageBaseAttribute) || l;
-                g === N && h && A.attr(u) && A.attr(u, b(A.attr(u), h)), c[g] === e || A.attr(f) || A.attr(f, c[g]), g === N && i && !A.attr(E) ? A.attr(E, i) : g === N || !o || A.css(O) && "none" !== A.css(O) || A.css(O, "url('" + o + "')")
-            }
-        }
-
-        function s(t, e) {
-            if (!i.length) return void(a.autoDestroy && r.destroy());
-            for (var o = e || i, l = !1, u = a.imageBase || "", f = a.srcsetAttribute, c = a.handledName, s = 0; s < o.length; s++)
-                if (t || e || A(o[s])) {
-                    var g = n(o[s]),
-                        h = m(o[s]),
-                        b = g.attr(a.attribute),
-                        v = g.attr(a.imageBaseAttribute) || u,
-                        p = g.attr(a.loaderAttribute);
-                    g.data(c) || a.visibleOnly && !g.is(":visible") || !((b || g.attr(f)) && (h === N && (v + b !== g.attr(E) || g.attr(f) !== g.attr(F)) || h !== N && v + b !== g.css(O)) || p) || (l = !0, g.data(c, !0), d(g, h, v, p))
-                } l && (i = n(i).filter(function() {
-                return !n(this).data(c)
-            }))
-        }
-
-        function d(t, e, r, i) {
-            ++z;
-            var o = function() {
-                y("onError", t), p(), o = n.noop
-            };
-            y("beforeLoad", t);
-            var l = a.attribute,
-                u = a.srcsetAttribute,
-                f = a.sizesAttribute,
-                c = a.retinaAttribute,
-                s = a.removeAttribute,
-                d = a.loadedName,
-                A = t.attr(c);
-            if (i) {
-                var g = function() {
-                    s && t.removeAttr(a.loaderAttribute), t.data(d, !0), y(T, t), setTimeout(p, 1), g = n.noop
-                };
-                t.off(I).one(I, o).one(D, g), y(i, t, function(e) {
-                    e ? (t.off(D), g()) : (t.off(I), o())
-                }) || t.trigger(I)
-            } else {
-                var h = n(new Image);
-                h.one(I, o).one(D, function() {
-                    t.hide(), e === N ? t.attr(C, h.attr(C)).attr(F, h.attr(F)).attr(E, h.attr(E)) : t.css(O, "url('" + h.attr(E) + "')"), t[a.effect](a.effectTime), s && (t.removeAttr(l + " " + u + " " + c + " " + a.imageBaseAttribute), f !== C && t.removeAttr(f)), t.data(d, !0), y(T, t), h.remove(), p()
-                });
-                var m = (L && A ? A : t.attr(l)) || "";
-                h.attr(C, t.attr(f)).attr(F, t.attr(u)).attr(E, m ? r + m : null), h.complete && h.trigger(D)
-            }
-        }
-
-        function A(t) {
-            var e = t.getBoundingClientRect(),
-                r = a.scrollDirection,
-                n = a.threshold,
-                i = h() + n > e.top && -n < e.bottom,
-                o = g() + n > e.left && -n < e.right;
-            return "vertical" === r ? i : "horizontal" === r ? o : i && o
-        }
-
-        function g() {
-            return w >= 0 ? w : w = n(t).width()
-        }
-
-        function h() {
-            return B >= 0 ? B : B = n(t).height()
-        }
-
-        function m(t) {
-            return t.tagName.toLowerCase()
-        }
-
-        function b(t, e) {
-            if (e) {
-                var r = t.split(",");
-                t = "";
-                for (var a = 0, n = r.length; a < n; a++) t += e + r[a].trim() + (a !== n - 1 ? "," : "")
-            }
-            return t
-        }
-
-        function v(t, e) {
-            var n, i = 0;
-            return function(o, l) {
-                function u() {
-                    i = +new Date, e.call(r, o)
-                }
-                var f = +new Date - i;
-                n && clearTimeout(n), f > t || !a.enableThrottle || l ? u() : n = setTimeout(u, t - f)
-            }
-        }
-
-        function p() {
-            --z, i.length || z || y("onFinishedAll")
-        }
-
-        function y(t, e, n) {
-            return !!(t = a[t]) && (t.apply(r, [].slice.call(arguments, 1)), !0)
-        }
-        var z = 0,
-            w = -1,
-            B = -1,
-            L = !1,
-            T = "afterLoad",
-            D = "load",
-            I = "error",
-            N = "img",
-            E = "src",
-            F = "srcset",
-            C = "sizes",
-            O = "background-image";
-        "event" === a.bind || o ? f() : n(t).on(D + "." + u, f)
-    }
-
-    function a(a, o) {
-        var l = this,
-            u = n.extend({}, l.config, o),
-            f = {},
-            c = u.name + "-" + ++i;
-        return l.config = function(t, r) {
-            return r === e ? u[t] : (u[t] = r, l)
-        }, l.addItems = function(t) {
-            return f.a && f.a("string" === n.type(t) ? n(t) : t), l
-        }, l.getItems = function() {
-            return f.g ? f.g() : {}
-        }, l.update = function(t) {
-            return f.e && f.e({}, !t), l
-        }, l.force = function(t) {
-            return f.f && f.f("string" === n.type(t) ? n(t) : t), l
-        }, l.loadAll = function() {
-            return f.e && f.e({
-                all: !0
-            }, !0), l
-        }, l.destroy = function() {
-            return n(u.appendScroll).off("." + c, f.e), n(t).off("." + c), f = {}, e
-        }, r(l, u, a, f, c), u.chainable ? a : l
-    }
-    var n = t.jQuery || t.Zepto,
-        i = 0,
-        o = !1;
-    n.fn.Lazy = n.fn.lazy = function(t) {
-        return new a(this, t)
-    }, n.Lazy = n.lazy = function(t, r, i) {
-        if (n.isFunction(r) && (i = r, r = []), n.isFunction(i)) {
-            t = n.isArray(t) ? t : [t], r = n.isArray(r) ? r : [r];
-            for (var o = a.prototype.config, l = o._f || (o._f = {}), u = 0, f = t.length; u < f; u++)(o[t[u]] === e || n.isFunction(o[t[u]])) && (o[t[u]] = i);
-            for (var c = 0, s = r.length; c < s; c++) l[r[c]] = t[0]
-        }
-    }, a.prototype.config = {
-        name: "lazy",
-        chainable: !0,
-        autoDestroy: !0,
-        bind: "load",
-        threshold: 500,
-        visibleOnly: !1,
-        appendScroll: t,
-        scrollDirection: "both",
-        imageBase: null,
-        defaultImage: "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
-        placeholder: null,
-        delay: -1,
-        combined: !1,
-        attribute: "data-src",
-        srcsetAttribute: "data-srcset",
-        sizesAttribute: "data-sizes",
-        retinaAttribute: "data-retina",
-        loaderAttribute: "data-loader",
-        imageBaseAttribute: "data-imagebase",
-        removeAttribute: !0,
-        handledName: "handled",
-        loadedName: "loaded",
-        effect: "show",
-        effectTime: 0,
-        enableThrottle: !0,
-        throttle: 250,
-        beforeLoad: e,
-        afterLoad: e,
-        onError: e,
-        onFinishedAll: e
-    }, n(t).on("load", function() {
-        o = !0
-    })
-}(window);
 
 function preloadImages_main() {
     var e = $(".dinamic-popup .preload-image-container .lazy");
@@ -21208,7 +20990,10 @@ function preloadImages_main() {
                 opacity: 0,
                 "pointer-events": "none",
                 ease: Power2.easeInOut
-            }), $(e).hasClass("no-img") || $(e).removeAttr("style"), $words = $(e).parent().find(".vertical-words"), $words.length > 0 && $words.addClass("visible")
+            }),
+            $(e).hasClass("no-img") || $(e).removeAttr("style"),
+            $words = $(e).parent().find(".vertical-words"),
+            $words.length > 0 && $words.addClass("visible")
         },
         onError: function() {},
         onFinishedAll: function() {}
@@ -21217,8 +21002,8 @@ function preloadImages_main() {
 $(window).on("resize", function() {
     $(".dinamic-popup .preload-image-container .preload-mask-wrapper").removeClass("mask-resized"), preloadImages_main()
 });
-"use strict";
 
+"use strict";
 function _classCallCheck(e, t) {
     if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
 }
@@ -21228,7 +21013,12 @@ function mod(e, t) {
 }
 
 function home_docReady() {
-    fillCapsuleDataName(), changeActionAdvice("нажми и держи"), isTouchDevice() && $("body").addClass("touch-device"), isTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"), $(".home-social-awards-container").addClass("without-sounds"), $(".special-capsule-button-link").addClass("link-left"))
+    fillCapsuleDataName(),
+    changeActionAdvice("нажми и держи"),
+    isTouchDevice() && $("body").addClass("touch-device"), i
+    sTouchDevice() && ($(".bottom-bar .sound-container").css("display", "none"),
+                       $(".home-social-awards-container").addClass("without-sounds"),
+                       $(".special-capsule-button-link").addClass("link-left"))
 }
 
 function reorient() {
@@ -21237,13 +21027,48 @@ function reorient() {
 }
 
 function home_docLoad() {
-    home_initializeGlobalVariables(), home_initializeTweens(), home_bindEvents(), animatePreload(), fillGems(), createAsociatedArrayOfImages(), currentCanvas = asociatedArrayOfImages[$currentCapsule.index()][0], canvasImages = document.querySelectorAll(".image-effect"), canvasImageSrc = [];
+    home_initializeGlobalVariables(),
+    home_initializeTweens(),
+    home_bindEvents(),
+    animatePreload(),
+    fillGems(),
+    createAsociatedArrayOfImages(),
+    currentCanvas = asociatedArrayOfImages[$currentCapsule.index()][0],
+    canvasImages = document.querySelectorAll(".image-effect"),
+    canvasImageSrc = [];
     for (var e = 0; e < canvasImages.length; e++) canvasImageSrc.push(canvasImages[e].getAttribute("src"));
     initSliderWork()
 }
 
 function home_initializeGlobalVariables() {
-    buttonPushed = !1, capsuleAnimationFinished = !0, inTransition = !0, durationOfVideo = 2, durationOfActionSound = 7, soundsMuted = !1, soundsMutedByContact = !1, $currentCapsule = $(".capsules-container .capsule.current"), $transitionCurtain = $(".transition-curtain")[0], $(".section-home").hasClass("is-404") || (overlay = new SvgCurtain($transitionCurtain)), curtainTransitionDuration = 600, curtainPoints = 4, curtainPointsDelayMax = 400, curtainDelayPerPath = 100, preloadFinished = !1, popupOpened = !1, enableParallax = !1, SCROLLINC = 45, goingToScrollTop = $(window).scrollTop(), smoothScrolling = !1, asociatedArrayOfImages = [], pressedHold = !1, workSlideMove = !1, soundCapsulePlayed = !1, canResizeCanvas = !0, lastHoverAudio = 0, firstPushState = !0, doPushState = !0
+    buttonPushed = !1,
+    capsuleAnimationFinished = !0,
+    inTransition = !0,
+    durationOfVideo = 2,
+    durationOfActionSound = 7,
+    soundsMuted = !1,
+    soundsMutedByContact = !1,
+    $currentCapsule = $(".capsules-container .capsule.current"),
+    $transitionCurtain = $(".transition-curtain")[0],
+    $(".section-home").hasClass("is-404") || (overlay = new SvgCurtain($transitionCurtain)),
+    curtainTransitionDuration = 600,
+    curtainPoints = 4,
+    curtainPointsDelayMax = 400,
+    curtainDelayPerPath = 100,
+    preloadFinished = !1,
+    popupOpened = !1,
+    enableParallax = !1,
+    SCROLLINC = 45,
+    goingToScrollTop = $(window).scrollTop(),
+    smoothScrolling = !1,
+    asociatedArrayOfImages = [],
+    pressedHold = !1,
+    workSlideMove = !1,
+    soundCapsulePlayed = !1,
+    canResizeCanvas = !0,
+    lastHoverAudio = 0,
+    firstPushState = !0,
+    doPushState = !0
 }
 
 function home_resize() {
@@ -21324,7 +21149,8 @@ function home_bindEvents() {
     $("html,body").on("click", ".js-open-popup", openGeneralPopup),
     $(".work-slider-wrapper .controls-container .prev-container").click(workPrevSlide),
     $(".work-slider-wrapper .controls-container .next-container").click(workNextSlide),
-    $(window).resize(home_resize), home_resize(),
+    $(window).resize(home_resize),
+    home_resize(),
     $(".special-popup").on("click", ".contact-form-slider-container .next", goToContactNext),
     $(".special-popup").on("click", ".contact-form-slider-container .prev", goToContactPrev),
     $(".special-popup").on("click", ".contact-form-slider-container .send", sendForm),
@@ -21493,8 +21319,12 @@ function fillCapsuleDataName() {
 }
 
 function fillGems() {
-    for (var e = $(".capsules-container .capsule:not(.not-showed)"), t = "", n = 0; n < e.length; n++) t += '<div class="gem"><div class="gem-bg"></div></div>';
-    $(".gems-container .gems-wrapper").append(t)
+  for (var e = $(".capsules-container .capsule:not(.not-showed)"),
+         t = "",
+         n = 0;
+         n < e.length; n++)
+      t += '<div class="gem"><div class="gem-bg"></div></div>';
+  $(".gems-container .gems-wrapper").append(t)
 }
 
 function updateCanvas() {
@@ -21511,19 +21341,23 @@ function revealCurrentGem() {
         var e = $(".capsules-container .capsule:not(.not-showed)"),
             t = $(".gems-container .gems-wrapper .gem"),
             n = $currentCapsule.index() - 1;
-        $(t[n]).find(".gem-bg").css("background", $(e[n]).attr("data-color")), TweenMax.to($($(".gems-container .gems-wrapper .gem")[n]).find(".gem-bg"), 1, {
+        $(t[n]).find(".gem-bg").css("background", $(e[n]).attr("data-color")),
+        TweenMax.to($($(".gems-container .gems-wrapper .gem")[n]).find(".gem-bg"), 1, {
             width: "1900%",
             height: "1900%",
             opacity: 0,
             ease: Power2.easeInOut,
             onComplete: function() {
-                $(t[n]).addClass("fill"), $(t[n]).css("background", $(e[n]).attr("data-color"));
+                $(t[n]).addClass("fill"),
+                $(t[n]).css("background", $(e[n]).attr("data-color"));
                 var i = $(".gems-container .gems-wrapper .gem.fill");
                 i.length >= t.length ? (animateRotateGems(), setTimeout(function() {
                     tweenWaitGems.play(0)
-                }, 600), intervalGems = setInterval(function() {
+                }, 600),
+                intervalGems = setInterval(function() {
                     tweenWaitGems.play(0)
-                }, 4e3), $(".gems-container").removeClass("not-complete"), $(".gems-container").addClass("complete js-open-popup cursor-customized hover-white")) : ($(".gems-container").addClass("not-complete"), $(".gems-container").removeClass("complete js-open-popup cursor-customized hover-white"))
+                }, 4e3),
+                $(".gems-container").removeClass("not-complete"), $(".gems-container").addClass("complete js-open-popup cursor-customized hover-white")) : ($(".gems-container").addClass("not-complete"), $(".gems-container").removeClass("complete js-open-popup cursor-customized hover-white"))
             }
         })
     }
@@ -21552,10 +21386,14 @@ function animatePreload() {
     }, 1).to(e.find("img")[3], .5, {
         opacity: 1,
         onStart: function() {
-            playSound(preloadImageAudio[3]), $(".preload-container .preload-content .subtitle").removeClass("blink"), TweenMax.to($(".preload-container"), 1, {
+            playSound(preloadImageAudio[3]),
+            $(".preload-container .preload-content .subtitle").removeClass("blink"),
+            TweenMax.to($(".preload-container"), 1, {
                 opacity: 0,
                 onComplete: function() {
-                    $(".preload-container").css("pointer-events", "none"), $("#three-container").css("opacity", "0"), $(".section-home").hasClass("is-404") ? animate404Screen() : (playSound(preloadImageAudio[4]), animateFirstScreen())
+                    $(".preload-container").css("pointer-events", "none"),
+                    $("#three-container").css("opacity", "0"),
+                    $(".section-home").hasClass("is-404") ? animate404Screen() : (playSound(preloadImageAudio[4]), animateFirstScreen())
                 }
             })
         }
@@ -21566,7 +21404,8 @@ function removePreload() {
     TweenMax.to($(".preload-container"), .5, {
         opacity: 0,
         onComplete: function() {
-            $(".preload-container").css("pointer-events", "none"), $(".section-home").hasClass("is-404") ? animate404Screen() : animateFirstScreen()
+            $(".preload-container").css("pointer-events", "none"),
+            $(".section-home").hasClass("is-404") ? animate404Screen() : animateFirstScreen()
         }
     })
 }
@@ -21576,9 +21415,13 @@ function animateFirstScreen() {
     var e = $(".capsules-container .capsule.showing").data("name");
     prepareCapsuleByName(e, !0);
     var t = $(".capsules-container .capsule[data-name=home]").find(".capsule-sound")[0];
-    playSound(t), stopSound(actionAudio), revealCurrentGem(), TweenMax.to($(".main-title-container p"), 0, {
+    playSound(t),
+    stopSound(actionAudio),
+    revealCurrentGem(),
+    TweenMax.to($(".main-title-container p"), 0, {
         top: "30px"
-    }), TweenMax.to($(".home-social-awards-container .home-social-container, .home-social-awards-container .home-awards-container"), 0, {
+    }),
+    TweenMax.to($(".home-social-awards-container .home-social-container, .home-social-awards-container .home-awards-container"), 0, {
         y: 30
     });
     var n = new TimelineMax;
@@ -21628,7 +21471,14 @@ function prepareGeneralAnimations() {
 }
 
 function animateGeneralElements() {
-    for (var e = $(window).scrollTop() + .8 * $(window).innerHeight(), t = $(window).scrollTop() - .25 * $(window).innerHeight(), n = $(".dinamic-popup .js-animate"), i = 0, r = .8, o = 0; o < n.length; o++)
+    for (var e = $(window).scrollTop() + .8 * $(window).innerHeight(),
+         t = $(window).scrollTop() - .25 * $(window).innerHeight(),
+         n = $(".dinamic-popup .js-animate"),
+         i = 0,
+         r = .8,
+         o = 0;
+         o < n.length;
+         o++)
       {
         var a = $(n[o]);
         a.offset().top < e && a.offset().top > t && !a.hasClass("js-animated") && (i += .1, a.addClass("js-animated"), "top-opacity" == a.attr("data-animation") ? TweenLite.to(a, r, {
@@ -21645,7 +21495,14 @@ function animateGeneralElements() {
 }
 
 function animateShowVideos() {
-    for (var e = $(window).scrollTop() + .8 * $(window).innerHeight(), t = $(window).scrollTop() - .4 * $(window).innerHeight(), n = $(".dinamic-popup .video-container"), i = 0, r = .8, o = 0; o < n.length; o++) {
+    for (var e = $(window).scrollTop() + .8 * $(window).innerHeight(),
+    t = $(window).scrollTop() - .4 * $(window).innerHeight(),
+    n = $(".dinamic-popup .video-container"),
+    i = 0,
+    r = .8,
+    o = 0;
+    o < n.length;
+    o++) {
         var a = $(n[o]);
         if (a.offset().top < e && a.offset().top > t) {
             if (a.find("video")[0].paused) {
@@ -21667,10 +21524,14 @@ function animateShowVideos() {
 function animate404Screen() {
     changeMainTitle($($(".capsules-container .capsule.not-showed")).find(".capsule-main-title").text());
     var e = $($(".capsules-container .capsule.not-showed")).find(".capsule-three-background-path").attr("data-three-path");
-    putNewThreeObject(e), TweenMax.to($("#three-container"), 1.5, {
+    putNewThreeObject(e),
+    TweenMax.to($("#three-container"), 1.5, {
         opacity: 1
-    }), appearHeaderAndFooter(), setTimeout(function() {
-        fadeInMainTitle(), inTransition = !1, TweenMax.to($(".button-go-to-home"), .5, {
+    }), appearHeaderAndFooter(),
+    setTimeout(function() {
+        fadeInMainTitle(),
+        inTransition = !1,
+        TweenMax.to($(".button-go-to-home"), .5, {
             opacity: 1,
             delay: 1,
             "pointer-events": "auto"
@@ -21712,19 +21573,40 @@ function getRandomColor() {
 
 function animateLightsColor() {
     var e = 600 - 550 * tweenMaxTransition.progress();
-    changeLightsColor(getRandomColor(), getRandomColor()), changingColorInterval = setTimeout(animateLightsColor, e)
+    changeLightsColor(getRandomColor(), getRandomColor()),
+    changingColorInterval = setTimeout(animateLightsColor, e)
 }
 
 function chargeSingle() {
-    inTransition || workSlideMove || (pressedHold = !0, startCapsuleLoop(), tweenPress.play(), animate(), $(".background-bar").addClass("active"))
+    inTransition || workSlideMove || (pressedHold = !0,
+                                      startCapsuleLoop(),
+                                      tweenPress.play(),
+                                      animate(),
+                                      $(".background-bar").addClass("active"))
 }
 
 function goToSingle() {
-    pressedHold && (endCapsuleLoop(), tweenPress.reverse(), $(".background-bar").removeClass("active"), pressedHold = !1)
+    pressedHold && (endCapsuleLoop(),
+                    tweenPress.reverse(),
+                    $(".background-bar").removeClass("active"),
+                    pressedHold = !1)
 }
 
 function startCapsuleLoop() {
-    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1, glitchPass.permanentEfect = !0, buttonPushed = !0, inTransition = !0, capsuleAnimationFinished = !1, playSound(actionAudio), stopSound(regularAudio), "work" == $currentCapsule.attr("data-name") && hideWorkSlider(), makeTransitionToSingle(), animateLightsColor(), changeMainTitle("Удерживай"), changeActionAdvice("нажми и держи"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), disappearHeaderAndFooter())
+    buttonPushed || inTransition || popupOpened || !preloadFinished || (glitchPass.randX = 1,
+                                                                        glitchPass.permanentEfect = !0,
+                                                                        buttonPushed = !0,
+                                                                        inTransition = !0,
+                                                                        capsuleAnimationFinished = !1,
+                                                                        playSound(actionAudio),
+                                                                        stopSound(regularAudio),
+                                                                        "work" == $currentCapsule.attr("data-name") && hideWorkSlider(),
+                                                                        makeTransitionToSingle(),
+                                                                        animateLightsColor(),
+                                                                        changeMainTitle("Удерживай"),
+                                                                        changeActionAdvice("нажми и держи"),
+                                                                        $(".navigate-single-button-advice").removeClass("blink-slow blink"),
+                                                                        disappearHeaderAndFooter())
 }
 
 function endCapsuleLoop() {
@@ -21784,11 +21666,18 @@ function createAsociatedArrayOfImages() {
 }
 
 function makeTransitionToSingle() {
-    $progressBar = $(".section-home .background-bar .progress-bar"), tweenMaxTransition = TweenMax.to($progressBar, durationOfVideo, {
+    $progressBar = $(".section-home .background-bar .progress-bar"),
+    tweenMaxTransition = TweenMax.to($progressBar, durationOfVideo, {
         left: "0px",
         ease: Power0.easeNone,
         onComplete: function() {
-            capsuleAnimationFinished = !0, buttonPushed && (changeActionAdvice("well done!"), $(".main-title-container p").addClass("blink"), changeMainTitle("release"), $(".navigate-single-button-advice").removeClass("blink-slow blink"), $(".navigate-single-button-advice").addClass("blink"), goToSingle())
+            capsuleAnimationFinished = !0,
+            buttonPushed && (changeActionAdvice("well done!"),
+                             $(".main-title-container p").addClass("blink"),
+                             changeMainTitle("release"),
+                             $(".navigate-single-button-advice").removeClass("blink-slow blink"),
+                             $(".navigate-single-button-advice").addClass("blink"),
+                             goToSingle())
         }
     })
 }
@@ -21840,11 +21729,14 @@ function stopSound(e) {
 }
 
 function switchVolume(e) {
-    e.stopPropagation(), soundsMuted ? unMuteSounds() : muteSounds()
+    e.stopPropagation(),
+    soundsMuted ? unMuteSounds() : muteSounds()
 }
 
 function playHoverSound() {
-    lastHoverAudio == hoverAudio.length - 1 && (lastHoverAudio = 0), playSound(hoverAudio[lastHoverAudio]), lastHoverAudio++
+    lastHoverAudio == hoverAudio.length - 1 && (lastHoverAudio = 0),
+    playSound(hoverAudio[lastHoverAudio]),
+    lastHoverAudio++
 }
 
 function muteSounds() {
@@ -21852,16 +21744,22 @@ function muteSounds() {
 }
 
 function unMuteSounds() {
-    gainNode.gain.setValueAtTime(1, 0), $(".tachable .stud").css("left", "-100%"), $(".bottom-bar .sound-container p .value").text("ON"), soundsMuted = !1
+    gainNode.gain.setValueAtTime(1, 0),
+    $(".tachable .stud").css("left", "-100%"),
+    $(".bottom-bar .sound-container p .value").text("ON"),
+    soundsMuted = !1
 }
 
 function openSingleOfSectionPopup() {
-    $(".top-bar .gems-container, .top-bar .special-capsule-container, .bottom-bar .credits-container").addClass("hidden"), popupOpened = !0, selectSingleOfSectionPopup()
+    $(".top-bar .gems-container, .top-bar .special-capsule-container, .bottom-bar .credits-container").addClass("hidden"),
+    popupOpened = !0,
+    selectSingleOfSectionPopup()
 }
 
 function openGeneralPopup(e) {
     if (e.stopPropagation(), !inTransition) {
-        e.stopPropagation(), e.stopImmediatePropagation();
+        e.stopPropagation(),
+        e.stopImmediatePropagation();
         var t = $(e.currentTarget);
         t.hasClass("js-open-popup") && (popupOpened = !0, animateTransitionCurtain(), TweenMax.to($(".content-animable"), 1, {
             y: 30,
@@ -21876,62 +21774,151 @@ function openGeneralPopup(e) {
 
 function selectGeneralPopup(e) {
     $(".capsules-container .capsule.showing");
-    if ($(".special-popup").removeClass("black-background"), $(".bottom-bar .special-capsule-bottom-link").addClass("hidden"), e.hasClass("js-open-popup")) {
-        if (e.hasClass("credits-container")) createPopupTagEvent("Credits"), clearInterval(intervalGems), canResizeCanvas = !1, $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"), disappearHeaderAndFooter(), fillAndShowSpecialPopupContent($(".credits-popup")), $(".special-popup").addClass("black-background"), $(".special-popup .popup-content .close-button").addClass("white-color"), $(".top-bar .gems-container,.top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container").addClass("hidden"), $(".main-title-container").css("display", "none"), animateCreditsPopup();
-        else if (e.hasClass("menu-button")) createPopupTagEvent("Menu"), clearInterval(intervalMenu), soundCapsulePlayed = !1, canResizeCanvas = !1, $(".top-bar .gems-container, .top-bar .menu-button").addClass("hidden"), $(".special-popup").addClass("black-background"), disappearHeaderAndFooter(), fillAndShowSpecialPopupContent($(".gems-popup")), $(".special-popup.black-background .popup-content .close-button").addClass("white-color"), disableCurrentSectionLink(), animateMenuPopup();
+    if ($(".special-popup").removeClass("black-background"),
+        $(".bottom-bar .special-capsule-bottom-link").addClass("hidden"),
+        e.hasClass("js-open-popup")) {
+        if (e.hasClass("credits-container"))
+          createPopupTagEvent("Credits"),
+          clearInterval(intervalGems),
+          canResizeCanvas = !1,
+          $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"),
+          disappearHeaderAndFooter(),
+          fillAndShowSpecialPopupContent($(".credits-popup")),
+          $(".special-popup").addClass("black-background"),
+          $(".special-popup .popup-content .close-button").addClass("white-color"),
+          $(".top-bar .gems-container,.top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container").addClass("hidden"),
+          $(".main-title-container").css("display", "none"),
+          animateCreditsPopup();
+        else if (e.hasClass("menu-button"))
+          createPopupTagEvent("Menu"),
+          clearInterval(intervalMenu),
+          soundCapsulePlayed = !1,
+          canResizeCanvas = !1,
+          $(".top-bar .gems-container, .top-bar .menu-button").addClass("hidden"),
+          $(".special-popup").addClass("black-background"),
+          disappearHeaderAndFooter(),
+          fillAndShowSpecialPopupContent($(".gems-popup")),
+          $(".special-popup.black-background .popup-content .close-button").addClass("white-color"),
+          disableCurrentSectionLink(),
+          animateMenuPopup();
         else if (e.hasClass("contact-container") || e.hasClass("open-contact")) {
-            createPopupTagEvent("Contact"), currentStep = 0, canResizeCanvas = !1, $(".custom-cursor-wrapper .custom-cursor").addClass("cursor-black"), $(".main-title-container").css("display", "none"), fillAndShowSpecialPopupContent($(".contact-popup")), currentFormSlide = 0;
+            createPopupTagEvent("Contact"),
+            currentStep = 0,
+            canResizeCanvas = !1,
+            $(".custom-cursor-wrapper .custom-cursor").addClass("cursor-black"),
+            $(".main-title-container").css("display", "none"),
+            fillAndShowSpecialPopupContent($(".contact-popup")),
+            currentFormSlide = 0;
             var t = $($(".special-popup .popup-content .contact-container .contact-form-slider-container .slider-container .slides .slide")[currentFormSlide]);
-            t.addClass("current"), t.find(".slide-content").css("opacity", "1"), $(".special-popup .contact-form-slider-container .slider-container .slide.current input").focus(), $(".bottom-bar, .top-bar").css("z-index", "9"), $(".main-title-container").css("z-index", "7"), $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar, .bottom-bar .credits-container, .bottom-bar .sound-container, .bottom-bar .special-capsule-button-link, .bottom-bar .contact-container, .bottom-bar .social-container, .bottom-bar .color-container").addClass("hidden"), TweenMax.to($(".top-bar, .bottom-bar"), .5, {
+            t.addClass("current"),
+            t.find(".slide-content").css("opacity", "1"),
+            $(".special-popup .contact-form-slider-container .slider-container .slide.current input").focus(),
+            $(".bottom-bar, .top-bar").css("z-index", "9"),
+            $(".main-title-container").css("z-index", "7"),
+            $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar, .bottom-bar .credits-container, .bottom-bar .sound-container, .bottom-bar .special-capsule-button-link, .bottom-bar .contact-container, .bottom-bar .social-container, .bottom-bar .color-container").addClass("hidden"),
+            TweenMax.to($(".top-bar, .bottom-bar"), .5, {
                 opacity: 1,
                 y: 0,
                 onComplete: function() {
                     inTransition = !1
                 }
-            }), soundsMuted || (soundsMutedByContact = !0, muteSounds())
+            }),
+            soundsMuted || (soundsMutedByContact = !0, muteSounds())
         }
         enableParallax = !0
     }
-    overlay.toggle(), $(".dinamic-popup").css("z-index", "6"), $(".special-popup").css("z-index", "8")
+    overlay.toggle(),
+    $(".dinamic-popup").css("z-index", "6"),
+    $(".special-popup").css("z-index", "8")
 }
 
 function selectSingleOfSectionPopup() {
     var e = $(".section-home .navigate-single-button-container").attr("data-open-popup");
-    void 0 != e && "" != e ? (fillAndShowGeneralPopupContent($currentCapsule.find(".capsule-popup[data-popup-name=" + e + "]")), createCapsuleTagEvent(e)) : (fillAndShowGeneralPopupContent($currentCapsule.find(".capsule-popup")), createCapsuleTagEvent($currentCapsule.attr("data-name"))), $("body").addClass("popup-capsule-opened"), $(".bottom-bar .credits-container, .bottom-bar .special-capsule-bottom-link").addClass("hidden"), changeColorsOfElementsForSingle(), animateCapsulePopup(), enableParallax = !0, preloadImages_main(), putFloatingObjects(), $(".main-title-container").addClass("popup-opened"), $(".bottom-bar .special-capsule-button-link").addClass("hidden"), changeToHaveGoodScroll(), $(".dinamic-popup").css("z-index", "6")
+    void 0 != e && "" != e ? (fillAndShowGeneralPopupContent($currentCapsule.find(".capsule-popup[data-popup-name=" + e + "]")),
+                              createCapsuleTagEvent(e))
+                           : (fillAndShowGeneralPopupContent($currentCapsule.find(".capsule-popup")),
+                              createCapsuleTagEvent($currentCapsule.attr("data-name"))),
+    $("body").addClass("popup-capsule-opened"),
+    $(".bottom-bar .credits-container, .bottom-bar .special-capsule-bottom-link").addClass("hidden"),
+    changeColorsOfElementsForSingle(),
+    animateCapsulePopup(),
+    enableParallax = !0,
+    preloadImages_main(),
+    putFloatingObjects(),
+    $(".main-title-container").addClass("popup-opened"),
+    $(".bottom-bar .special-capsule-button-link").addClass("hidden"),
+    changeToHaveGoodScroll(), $(".dinamic-popup").css("z-index", "6")
 }
 
 function changeColorsOfElementsForSingle() {
-    $(".special-popup").removeClass("black-background"), $(".custom-cursor-wrapper .custom-cursor").addClass("cursor-black"), $(".dinamic-popup .popup-content .close-button").addClass("white-color"), $(".bottom-bar .sound-container .svg-container svg").addClass("fill-black"), $(".bottom-bar .contact-container svg").addClass("fill-black"), $(".bottom-bar .social-container a svg").addClass("fill-black"), $(".bottom-bar .sound-container p").addClass("font-black"), $(".bottom-bar .contact-container p").addClass("font-black"), $(".bottom-bar .center-container p").addClass("font-black"), $(".bottom-bar .sound-container p").removeClass("font-gray"), $(".bottom-bar .contact-container p").removeClass("font-gray"), $(".bottom-bar .center-container p").removeClass("font-gray"), $(".bottom-bar .color-container .color-text").addClass("font-black"), $(".bottom-bar .color-container .color-text").removeClass("font-white"), $(".bottom-bar .color-container svg").addClass("fill-black")
+    $(".special-popup").removeClass("black-background"),
+    $(".custom-cursor-wrapper .custom-cursor").addClass("cursor-black"),
+    $(".dinamic-popup .popup-content .close-button").addClass("white-color"),
+    $(".bottom-bar .sound-container .svg-container svg").addClass("fill-black"),
+    $(".bottom-bar .contact-container svg").addClass("fill-black"),
+    $(".bottom-bar .social-container a svg").addClass("fill-black"),
+    $(".bottom-bar .sound-container p").addClass("font-black"),
+    $(".bottom-bar .contact-container p").addClass("font-black"),
+    $(".bottom-bar .center-container p").addClass("font-black"),
+    $(".bottom-bar .sound-container p").removeClass("font-gray"),
+    $(".bottom-bar .contact-container p").removeClass("font-gray"),
+    $(".bottom-bar .center-container p").removeClass("font-gray"),
+    $(".bottom-bar .color-container .color-text").addClass("font-black"),
+    $(".bottom-bar .color-container .color-text").removeClass("font-white"),
+    $(".bottom-bar .color-container svg").addClass("fill-black")
 }
 
 function changeColorsOfElementsForHome() {
-    $(".special-popup").removeClass("black-background"), $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"), $(".dinamic-popup .popup-content .close-button").removeClass("white-color"), $(".bottom-bar .sound-container .svg-container svg").removeClass("fill-black"), $(".bottom-bar .contact-container svg").removeClass("fill-black"), $(".bottom-bar .social-container a svg").removeClass("fill-black"), $(".bottom-bar .sound-container p").addClass("font-gray"), $(".bottom-bar .contact-container p").addClass("font-gray"), $(".bottom-bar .center-container p").addClass("font-gray"), $(".bottom-bar .sound-container p").removeClass("font-black"), $(".bottom-bar .contact-container p").removeClass("font-black"), $(".bottom-bar .center-container p").removeClass("font-black"), $(".bottom-bar .color-container .color-text").addClass("font-white"), $(".bottom-bar .color-container .color-text").removeClass("font-black"), $(".bottom-bar .color-container svg").removeClass("fill-black")
+    $(".special-popup").removeClass("black-background"),
+    $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"),
+    $(".dinamic-popup .popup-content .close-button").removeClass("white-color"),
+    $(".bottom-bar .sound-container .svg-container svg").removeClass("fill-black"),
+    $(".bottom-bar .contact-container svg").removeClass("fill-black"),
+    $(".bottom-bar .social-container a svg").removeClass("fill-black"),
+    $(".bottom-bar .sound-container p").addClass("font-gray"),
+    $(".bottom-bar .contact-container p").addClass("font-gray"),
+    $(".bottom-bar .center-container p").addClass("font-gray"),
+    $(".bottom-bar .sound-container p").removeClass("font-black"),
+    $(".bottom-bar .contact-container p").removeClass("font-black"),
+    $(".bottom-bar .center-container p").removeClass("font-black"),
+    $(".bottom-bar .color-container .color-text").addClass("font-white"),
+    $(".bottom-bar .color-container .color-text").removeClass("font-black"),
+    $(".bottom-bar .color-container svg").removeClass("fill-black")
 }
 
 function changeToHaveGoodScroll() {
-    $(".section-home").css("display", "none"), $("body").css("overflow", "auto"), $(".dinamic-popup").css({
+    $(".section-home").css("display", "none"),
+    $("body").css("overflow", "auto"),
+    $(".dinamic-popup").css({
         position: "relative",
         right: "auto",
         bottom: "auto",
         height: "100%"
-    }), $(".dinamic-popup .popup-content").css("height", "auto"), $(".dinamic-popup .popup-content .popup-content-work-container").css({
+    }),
+    $(".dinamic-popup .popup-content").css("height", "auto"),
+    $(".dinamic-popup .popup-content .popup-content-work-container").css({
         height: "100%"
     })
 }
 
 function changeBackToHaveGoodScroll() {
-    $("body").css("overflow", "hidden"), $(".dinamic-popup").css({
+    $("body").css("overflow", "hidden"),
+    $(".dinamic-popup").css({
         position: "fixed",
         height: "100vh",
         right: "0",
         bottom: "0"
-    }), $(".dinamic-popup .popup-content").css("height", "100vh"), $(".dinamic-popup .popup-content .popup-content-work-container").css({
+    }),
+    $(".dinamic-popup .popup-content").css("height", "100vh"),
+    $(".dinamic-popup .popup-content .popup-content-work-container").css({
         height: "100vh"
-    }), $(".section-home").css("display", "block")
+    }),
+    $(".section-home").css("display", "block")
 }
 
 function fillAndShowGeneralPopupContent(e) {
-    $(".dinamic-popup").html(e.html()), $(".dinamic-popup").addClass("active");
+    $(".dinamic-popup").html(e.html()),
+    $(".dinamic-popup").addClass("active");
     var t = location.href;
     pushState({
         url: t,
@@ -21940,7 +21927,8 @@ function fillAndShowGeneralPopupContent(e) {
 }
 
 function fillAndShowSpecialPopupContent(e) {
-    $(".special-popup").html(e.html()), $(".special-popup").addClass("active");
+    $(".special-popup").html(e.html()),
+    $(".special-popup").addClass("active");
     var t = location.href;
     pushState({
         url: t,
@@ -21949,66 +21937,138 @@ function fillAndShowSpecialPopupContent(e) {
 }
 
 function closeSpecialPopup(e) {
-    inTransition || (e.stopPropagation(), animateTransitionCurtain(), inTransition = !0, $(".bottom-bar .center-container").removeClass("blink"), TweenMax.to($(".special-popup .popup-content"), 1, {
-        y: 30,
-        ease: Power3.ease,
-        onComplete: function() {
-            if ($(".dinamic-popup").hasClass("active")) {
-                var t = $(e.currentTarget).closest(".popup");
-                $(".special-popup").css("z-index", "1"), t.removeClass("active"), $(".top-bar .menu-button, .bottom-bar, .bottom-bar .sound-container, .bottom-bar .contact-container, .bottom-bar .color-container , .bottom-bar .social-container").removeClass("hidden"), overlay.toggle(), TweenMax.to($(".main-title-container p"), .5, {
-                    y: 0,
-                    ease: Power2.easeOut
-                }), appearHeaderAndFooter()
+    inTransition || (e.stopPropagation(),
+                     animateTransitionCurtain(),
+                     inTransition = !0,
+                     $(".bottom-bar .center-container").removeClass("blink"),
+                     TweenMax.to($(".special-popup .popup-content"), 1, {
+                       y: 30,
+                       ease: Power3.ease,
+                       onComplete: function() {
+                         if ($(".dinamic-popup").hasClass("active")) {
+                           var t = $(e.currentTarget).closest(".popup");
+                           $(".special-popup").css("z-index", "1"),
+                           t.removeClass("active"),
+                           $(".top-bar .menu-button, .bottom-bar, .bottom-bar .sound-container, .bottom-bar .contact-container, .bottom-bar .color-container , .bottom-bar .social-container").removeClass("hidden"),
+                           overlay.toggle(),
+                           TweenMax.to($(".main-title-container p"), .5, {
+                             y: 0,
+                             ease: Power2.easeOut
+                        }),
+                        appearHeaderAndFooter()
             } else {
-                enableParallax = !1, appearHeaderAndFooter(), enableCurrentSectionLink(), void 0 != animationOfPopupCredits && animationOfPopupCredits.kill();
+                enableParallax = !1,
+                appearHeaderAndFooter(),
+                enableCurrentSectionLink(),
+                void 0 != animationOfPopupCredits && animationOfPopupCredits.kill();
                 var t = $(e.currentTarget).closest(".popup");
-                $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"), $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"), $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar, .bottom-bar .credits-container, .bottom-bar .sound-container, .bottom-bar .special-capsule-button-link, .bottom-bar .contact-container, .bottom-bar .social-container, .bottom-bar .color-container").removeClass("hidden"), $(".special-popup").css("z-index", "1"), $(".bottom-bar .center-container p").text(""), $(".bottom-bar .home-center-container").css("display", "none"), $(".bottom-bar .home-center-container").css("display", "block"), TweenMax.to($(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container"), .5, {
-                    opacity: 1,
-                    "pointer-events": "auto",
-                    onComplete: function() {
+                $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"),
+                $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"),
+                $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar, .bottom-bar .credits-container, .bottom-bar .sound-container, .bottom-bar .special-capsule-button-link, .bottom-bar .contact-container, .bottom-bar .social-container, .bottom-bar .color-container").removeClass("hidden"),
+                $(".special-popup").css("z-index", "1"),
+                $(".bottom-bar .center-container p").text(""),
+                $(".bottom-bar .home-center-container").css("display", "none"),
+                $(".bottom-bar .home-center-container").css("display", "block"),
+                TweenMax.to($(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container"), .5, {
+                      opacity: 1,
+                      "pointer-events": "auto",
+                      onComplete: function() {
                         $(".bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container").css("display", "block"), $(".bottom-bar .sound-container .svg-container").removeClass("tachable")
                     }
-                }), t.removeClass("active"), overlay.toggle(), TweenMax.to($("#three-container, .top-bar, .bottom-bar"), 0, {
+                  }),
+                  t.removeClass("active"),
+                  overlay.toggle(),
+                  TweenMax.to($("#three-container, .top-bar, .bottom-bar"), 0, {
                     opacity: 0
-                }), animatePopupToHome()
+                }),
+                animatePopupToHome()
             }
-            $(".main-title-container").css("display", "block"), destroyConfetti(), $(".special-popup").removeClass("black-background"), $(".bottom-bar .contact-container").removeClass("hidden"), $(".special-popup .popup-content .close-button").removeClass("white-color"), soundsMutedByContact && (soundsMutedByContact = !1, unMuteSounds())
+            $(".main-title-container").css("display", "block"),
+            destroyConfetti(),
+            $(".special-popup").removeClass("black-background"),
+            $(".bottom-bar .contact-container").removeClass("hidden"),
+            $(".special-popup .popup-content .close-button").removeClass("white-color"),
+            soundsMutedByContact && (soundsMutedByContact = !1, unMuteSounds())
         }
     }))
 }
 
 function closeMenu() {
-    inTransition || (goingToScrollTop = 0, enableParallax = !1, $(".transition-curtain").hasClass("is-opened") || animateTransitionCurtain(), inTransition = !0, setTimeout(function() {
-        enableCurrentSectionLink(), $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"), $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container").removeClass("hidden"), $(".special-popup").css("z-index", "1"), $(".special-popup").removeClass("active"), $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"), overlay.toggle()
-    }, 1e3), setTimeout(function() {
-        popupOpened = !1, canResizeCanvas = !0, closeGeneralPopupInstantly = !1
-    }, 1900), TweenMax.to($("#three-container"), 0, {
-        opacity: 0
-    }))
+    inTransition || (goingToScrollTop = 0,
+                     enableParallax = !1,
+                     $(".transition-curtain").hasClass("is-opened") || animateTransitionCurtain(),
+                     inTransition = !0,
+                     setTimeout(function() {
+                       enableCurrentSectionLink(),
+                       $(".custom-cursor-wrapper .custom-cursor").removeClass("cursor-black"),
+                       $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container").removeClass("hidden"),
+                       $(".special-popup").css("z-index", "1"),
+                       $(".special-popup").removeClass("active"),
+                       $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"),
+                       overlay.toggle()
+                     }, 1e3),
+                     setTimeout(function() {
+                       popupOpened = !1,
+                       canResizeCanvas = !0,
+                       closeGeneralPopupInstantly = !1
+                     }, 1900),
+                     TweenMax.to($("#three-container"), 0, {
+                       opacity: 0
+                    }))
 }
 
 function closeGeneralPopup(e) {
     if (!inTransition) {
-        e.stopPropagation(), goingToScrollTop = 0, enableParallax = !1, $(".transition-curtain").hasClass("is-opened") || animateTransitionCurtain(),
-            inTransition = !0, $(".bottom-bar .center-container").removeClass("blink");
+        e.stopPropagation(),
+        goingToScrollTop = 0,
+        enableParallax = !1,
+        $(".transition-curtain").hasClass("is-opened") || animateTransitionCurtain(),
+        inTransition = !0, $(".bottom-bar .center-container").removeClass("blink");
         var t;
-        t = "work" == $currentCapsule.attr("data-name") ? $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text() : $currentCapsule.find(".capsule-main-title").text(), changeMainTitle(t);
+        t = "work" == $currentCapsule.attr("data-name") ? $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
+                                                        : $currentCapsule.find(".capsule-main-title").text(),
+        changeMainTitle(t);
         var n = 1;
-        1 == closeGeneralPopupInstantly && (n = 0), TweenMax.to($(".dinamic-popup .popup-content .popup-content-work-container"), n, {
+        1 == closeGeneralPopupInstantly && (n = 0),
+        TweenMax.to($(".dinamic-popup .popup-content .popup-content-work-container"), n, {
             y: 30,
             ease: Power3.ease,
             onComplete: function() {
-                appearHeaderAndFooter(), $(".main-title-container").css("z-index", "3"), $(".bottom-bar, .top-bar").css("z-index", "6"), $(".main-title-container").css("display", "block"), changeBackToHaveGoodScroll(), enableCurrentSectionLink(), void 0 != animationOfPopupCredits && animationOfPopupCredits.kill();
+                appearHeaderAndFooter(),
+                $(".main-title-container").css("z-index", "3"),
+                $(".bottom-bar, .top-bar").css("z-index", "6"),
+                $(".main-title-container").css("display", "block"),
+                changeBackToHaveGoodScroll(),
+                enableCurrentSectionLink(),
+                void 0 != animationOfPopupCredits && animationOfPopupCredits.kill();
                 var t = $(e.currentTarget).closest(".popup");
-                $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container, .bottom-bar .social-container").removeClass("hidden"), $(".section-home .navigate-single-button-container").addClass("hidden"), $(".dinamic-popup").css("z-index", "1"), $(".bottom-bar .center-container p").text(""), $(".bottom-bar .home-center-container").css("display", "block"), n = .5, 1 == closeGeneralPopupInstantly && (n = 0), TweenMax.to($(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container"), n, {
+                $(".top-bar .gems-container, .top-bar .menu-button, .top-bar .special-capsule-container, .bottom-bar .credits-container, .bottom-bar .contact-container, .bottom-bar .social-container").removeClass("hidden"),
+                $(".section-home .navigate-single-button-container").addClass("hidden"),
+                $(".dinamic-popup").css("z-index", "1"),
+                $(".bottom-bar .center-container p").text(""),
+                $(".bottom-bar .home-center-container").css("display", "block"),
+                n = .5, 1 == closeGeneralPopupInstantly && (n = 0),
+                TweenMax.to($(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container"), n, {
                     opacity: 1,
                     "pointer-events": "auto",
                     onComplete: function() {
-                        $(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container").css("display", "block"), $(".bottom-bar .sound-container .svg-container").removeClass("tachable")
+                        $(".bottom-bar .center-container, .bottom-bar .sound-container p, .bottom-bar .contact-container p, .bottom-bar .social-container").css("display", "block"),
+                        $(".bottom-bar .sound-container .svg-container").removeClass("tachable")
                     }
-                }), $(".fo-canvas canvas").length > 0 && destroyMatter(), t.removeClass("active"), $(".main-title-container").removeClass("popup-opened"), $(".bottom-bar .special-capsule-button-link").removeClass("hidden"), changeColorsOfElementsForHome(), 0 == closeGeneralPopupInstantly && overlay.toggle(), TweenMax.to($("#three-container, .top-bar, .bottom-bar"), 0, {
+                }),
+                $(".fo-canvas canvas").length > 0 && destroyMatter(),
+                t.removeClass("active"),
+                $(".main-title-container").removeClass("popup-opened"),
+                $(".bottom-bar .special-capsule-button-link").removeClass("hidden"),
+                changeColorsOfElementsForHome(),
+                0 == closeGeneralPopupInstantly && overlay.toggle(),
+                TweenMax.to($("#three-container, .top-bar, .bottom-bar"), 0, {
                     opacity: 0
-                }), animatePopupToHome(), $(".bottom-bar .center-container").css("opacity", "1"), $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"), $("body").removeClass("popup-capsule-opened")
+                }),
+                animatePopupToHome(),
+                $(".bottom-bar .center-container").css("opacity", "1"),
+                $(".bottom-bar .special-capsule-bottom-link").removeClass("hidden"),
+                $("body").removeClass("popup-capsule-opened")
             }
         })
     }
@@ -22026,38 +22086,71 @@ function menuLinkHover(e) {
 }
 
 function enableCurrentSectionLink() {
-    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).addClass("cursor-customized"), $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).removeClass("disabled"), $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).css("pointer-events", "auto")
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).addClass("cursor-customized"),
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).removeClass("disabled"),
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).css("pointer-events", "auto")
 }
 
 function disableCurrentSectionLink() {
-    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).removeClass("cursor-customized"), $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).addClass("disabled"), $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).css("pointer-events", "none")
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).removeClass("cursor-customized"),
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).addClass("disabled"),
+    $($(".menu-container ul li[data-menu='" + $currentCapsule.attr("data-name") + "']")[0]).css("pointer-events", "none")
 }
 
 function changeCapsule(e) {
-    $(e.currentTarget).hasClass("special-link") && $(".special-popup").hasClass("active") ? (e.stopPropagation(), $(".special-popup .popup-content .close-button").click()) : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(), $(".dinamic-popup .popup-content .close-button").click()) : soundCapsulePlayed || inTransition || (e.stopPropagation(), $(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1, $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0, $(".dinamic-popup .popup-content .close-button").click(), inTransition = !1), changeCapsuleByName($(e.currentTarget).attr("data-menu"))))
+    $(e.currentTarget).hasClass("special-link")
+      && $(".special-popup").hasClass("active") ? (e.stopPropagation(),
+                                                   $(".special-popup .popup-content .close-button").click())
+                                                : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(),
+                                                                                                                                           $(".dinamic-popup .popup-content .close-button").click())
+                                                                                                                                        : soundCapsulePlayed || inTransition || (e.stopPropagation(),
+                                                                                                                                                                                 $(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1,
+                                                                                                                                                                                                                                                                     $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0,
+                                                                                                                                                                                                                                                                                                                $(".dinamic-popup .popup-content .close-button").click(),
+                                                                                                                                                                                                                                                                                                                inTransition = !1),
+                                                                                                                                                                                                                                                                     changeCapsuleByName($(e.currentTarget).attr("data-menu"))))
 }
 
 function changeCapsuleByName(e) {
-    soundCapsulePlayed = !0, fadeOutMainTitle(!0), prepareCapsuleByName(e, !1), closeMenu(), setTimeout(function() {
+    soundCapsulePlayed = !0,
+    fadeOutMainTitle(!0),
+    prepareCapsuleByName(e, !1),
+    closeMenu(),
+    setTimeout(function() {
         animateNewHome()
     }, 1300)
 }
 
 function prepareCapsuleByName(e, t) {
     var n;
-    $(".capsules-container .capsule").removeClass("current"), $('.capsules-container .capsule[data-name="' + e + '"]').addClass("current"), $currentCapsule = $(".capsules-container .capsule.current"), $(".home-center-container .special-capsule-link").attr("data-menu") == e ? $(".home-center-container, .bottom-bar .special-capsule-button-link").addClass("hidden") : $(".home-center-container, .bottom-bar .special-capsule-button-link").removeClass("hidden");
+    $(".capsules-container .capsule").removeClass("current"),
+    $('.capsules-container .capsule[data-name="' + e + '"]').addClass("current"),
+    $currentCapsule = $(".capsules-container .capsule.current"),
+    $(".home-center-container .special-capsule-link").attr("data-menu") == e ? $(".home-center-container, .bottom-bar .special-capsule-button-link").addClass("hidden")
+                                                                             : $(".home-center-container, .bottom-bar .special-capsule-button-link").removeClass("hidden");
     var i;
     if ("Проекты" == e) {
-        $(".main-title-container p").css("font-size", "12vw"), showWorkSlider(), $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
+        $(".main-title-container p").css("font-size", "12vw"),
+        showWorkSlider(),
+        $(".section-home .navigate-single-button-container").attr("data-work-index", 0);
         var r = $($currentCapsule.find(".capsule-popup")[0]).attr("data-popup-name");
-        $(".navigate-single-button-container").attr("data-open-popup", r), i = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
-    } else hideWorkSlider(), $(".navigate-single-button-container").removeAttr("data-open-popup"), $(".section-home .navigate-single-button-container").removeAttr("data-work-index"), i = $currentCapsule.find(".capsule-main-title").text();
-    changeMainTitle(i), TweenMax.to($(".section-home .navigate-single-button-container"), 0, {
+        $(".navigate-single-button-container").attr("data-open-popup", r),
+        i = $(".work-slider-wrapper .slider-container .slides .slide.current").find(".slider-main-title").text()
+    }
+    else hideWorkSlider(),
+         $(".navigate-single-button-container").removeAttr("data-open-popup"),
+         $(".section-home .navigate-single-button-container").removeAttr("data-work-index"),
+         i = $currentCapsule.find(".capsule-main-title").text();
+    changeMainTitle(i),
+    TweenMax.to($(".section-home .navigate-single-button-container"), 0, {
         "pointer-events": "none",
         opacity: 0
     }), TweenMax.to($(".section-home #three-container"), 0, {
         opacity: 0
-    }), updateThreeObject(), $(".capsules-container .capsule").removeClass("showing"), $currentCapsule.addClass("showing"), n = t ? 1.5 : 2;
+    }),
+    updateThreeObject(),
+    $(".capsules-container .capsule").removeClass("showing"),
+    $currentCapsule.addClass("showing"), n = t ? 1.5 : 2;
     var o = $currentCapsule.attr("data-href");
     "home" != e ? (TweenMax.to($(".home-social-awards-container"), 0, {
         "pointer-events": "none",
@@ -22086,11 +22179,17 @@ function updateMetaData(e) {
         n = e.find(".meta-data .description").text(),
         i = e.find(".meta-data .image").attr("data-src"),
         r = e.attr("data-href");
-    document.title = t, $("head").find('meta[name="apple-mobile-web-app-title"], meta[name="twitter:title"], meta[property="og:title"]').attr("content", t), $("head").find('meta[name="description"],meta[name="twitter:description"],meta[property="og:description"]').attr("content", n), $("head").find('meta[name="twitter:image"],meta[property="og:image"]').attr("content", i), $("head").find('meta[property="og:url"]').attr("content", r)
+    document.title = t,
+    $("head").find('meta[name="apple-mobile-web-app-title"], meta[name="twitter:title"], meta[property="og:title"]').attr("content", t),
+    $("head").find('meta[name="description"],meta[name="twitter:description"],meta[property="og:description"]').attr("content", n),
+    $("head").find('meta[name="twitter:image"],meta[property="og:image"]').attr("content", i),
+    $("head").find('meta[property="og:url"]').attr("content", r)
 }
 
 function pushState(e, t, n) {
-    e.timeStamp = (new Date).getTime(), currentState = e, firstPushState ? (firstPushState = !1, window.history.replaceState(e, t, n)) : (updateMetaData($currentCapsule), window.history.pushState(e, t, n), "capsule" == e.type && createTagEvent("pageview"))
+    e.timeStamp = (new Date).getTime(),
+    currentState = e,
+    firstPushState ? (firstPushState = !1, window.history.replaceState(e, t, n)) : (updateMetaData($currentCapsule), window.history.pushState(e, t, n), "capsule" == e.type && createTagEvent("pageview"))
 }
 
 function animateNewHome() {
@@ -22655,15 +22754,18 @@ function destroyConfetti() {
 }
 
 function changeMainTitle(e, t) {
-    void 0 != t && t ? "home" == $currentCapsule.attr("data-name") && doBoringText && $(".main-title-container p").text(e) : $(".main-title-container p").text(e)
+    void 0 != t && t ? "home" == $currentCapsule.attr("data-name") && doBoringText && $(".main-title-container p").text(e)
+                     : $(".main-title-container p").text(e)
 }
 
 function changeColorMainTitle(e) {
-    $(".main-title-container p").removeClass("font-black font-white"), $(".main-title-container p").addClass(e)
+    $(".main-title-container p").removeClass("font-black font-white"),
+    $(".main-title-container p").addClass(e)
 }
 
 function changeMainTitleWithAnimation(e) {
-    void 0 == e && (e = !1), e ? (fadeOutMainTitle(e), fadeInMainTitle(e)) : (fadeOutMainTitle(), setTimeout(function() {
+    void 0 == e && (e = !1),
+    e ? (fadeOutMainTitle(e), fadeInMainTitle(e)) : (fadeOutMainTitle(), setTimeout(function() {
         fadeInMainTitle()
     }, 600))
 }
@@ -22731,9 +22833,17 @@ function changeRandomTheme() {
 }
 
 function changeTheme(e) {
-    document.cookie = "custom-theme=" + e, $("body").addClass("changing-theme"), $("body").removeClass(function() {
+    document.cookie = "custom-theme=" + e,
+    $("body").addClass("changing-theme"),
+    $("body").removeClass(function() {
         return (this.className.match(/(theme-[\w-]*)/g) || []).join(" ")
-    }), "default" == e ? $("body").removeClass("custom-theme") : ($("body").addClass("custom-theme"), $("body").addClass("theme-" + e)), putDefaultLights(), updateBrowserTheme(), updateColorLineMouseConstrain(), $("body").removeClass("changing-theme")
+    }),
+    "default" == e ? $("body").removeClass("custom-theme") : ($("body").addClass("custom-theme"),
+                                                              $("body").addClass("theme-" + e)),
+    putDefaultLights(),
+    updateBrowserTheme(),
+    updateColorLineMouseConstrain(),
+    $("body").removeClass("changing-theme")
 }
 
 function getCurrentTheme() {
@@ -22764,13 +22874,13 @@ function changeBoringText() {
     if ("home" == $currentCapsule.attr("data-name")) {
         var e = [],
             t = 0;
-        0 == nextBoringText ? e = ["Эй", "ты ", "здесь"] : 1 == nextBoringText ?
+        0 == nextBoringText ? e = ["Привет", "а Вы", "здесь?"] : 1 == nextBoringText ?
         e = ["Нажми", "на", "меню", "сверху"] : 2 == nextBoringText ?
         e = ["не", "скучай", "чувак"] : 3 == nextBoringText ?
         e = ["я", "щас", "усну", "если", "так", "все", "будет", ":-)))"] : 4 == nextBoringText ?
-        e = ["что", "же ", "такое", "это всё"] : 5 == nextBoringText ?
-        e = ["слушай", "а", "ты", "не", "робот?"] : 6 == nextBoringText ?
-        e = ["смотри", "меня", "всего", "я", "крут", "и", "скромн"] :
+        e = ["что же", "это", "такое"] : 5 == nextBoringText ?
+        e = ["слушай", "а ты", "не робот?"] : 6 == nextBoringText ?
+        e = ["смотри", "меня", "всего", "я крут", "и скромн"] :
         t = e.length + 2, t > 0 && (animateMainTitleWithText(e), nextBoringText++, setTimeout(changeBoringText, 1e3 * t))
     }
 }
@@ -22780,7 +22890,8 @@ function animateMainTitleWithText(e) {
 }
 
 function stopBoringText() {
-    $("js-open-popup").unbind("click", stopBoringText), "home" == $currentCapsule.attr("data-name") && (changeMainTitle($($(".capsules-container .capsule.showing")).find(".capsule-main-title").text()), doBoringText = !1)
+    $("js-open-popup").unbind("click", stopBoringText),
+    "home" == $currentCapsule.attr("data-name") && (changeMainTitle($($(".capsules-container .capsule.showing")).find(".capsule-main-title").text()), doBoringText = !1)
 }
 
 function sendNewsletter() {
@@ -22941,7 +23052,11 @@ var changingColorInterval, tweenMaxTransition;
 window.onpopstate = function(e) {
     doPushState = !1;
     var t = !1;
-    "generalPopup" == currentState.type ? ($(".dinamic-popup").hasClass("active") && $(".dinamic-popup .popup-content .close-button").click(), "generalPopup" == e.state.type && (t = !0)) : "specialPopup" == currentState.type ? ($(".special-popup").hasClass("active") && $(".special-popup .popup-content .close-button").click(), "specialPopup" == e.state.type && (t = !0)) : t = !0, t ? "capsule" == e.state.type ? (currentState = e.state, changeCapsuleByName(e.state.capsule_name)) : ("generalPopup" == e.state.type || "specialPopup" == e.state.type) && (currentState.timeStamp < e.state.timeStamp ? window.history.forward() : window.history.back()) : currentState = e.state
+    "generalPopup" == currentState.type ? ($(".dinamic-popup").hasClass("active") && $(".dinamic-popup .popup-content .close-button").click(), "generalPopup" == e.state.type && (t = !0))
+                                        : "specialPopup" == currentState.type ? ($(".special-popup").hasClass("active") && $(".special-popup .popup-content .close-button").click(), "specialPopup" == e.state.type && (t = !0))
+                                                                              : t = !0, t ? "capsule" == e.state.type
+                                                                                          ? (currentState = e.state, changeCapsuleByName(e.state.capsule_name))
+                                                                                          : ("generalPopup" == e.state.type || "specialPopup" == e.state.type) && (currentState.timeStamp < e.state.timeStamp ? window.history.forward() : window.history.back()) : currentState = e.state
 };
 var hoverAnimation = !1,
     SvgCurtain = function() {
