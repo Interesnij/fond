@@ -364,8 +364,8 @@ function home_bindEvents() {
     }),
 
     on('.bottom-bar', 'click', '.sound-container', function() {switchVolume()})
-    on('body', 'click', '.special-link', function() {console.log("changeCapsule"), changeCapsule(this)})
-    //$(".special-link").on("click", changeCapsule),
+    //on('body', 'click', '.special-link', function() {console.log("changeCapsule"), changeCapsule(this)})
+    $(".special-link").on("click", changeCapsule),
     $(".special-popup").on("click", ".menu-container .menu-item", changeCapsule),
     $(".dinamic-popup").on("click", ".popup-content .close-button", closeGeneralPopup),
     $(".special-popup").on("click", ".popup-content .close-button", closeSpecialPopup),
@@ -1323,9 +1323,12 @@ function disableCurrentSectionLink() {
 
 function changeCapsule(e) {
     $(e.currentTarget).hasClass("special-link")
-      && $(".special-popup").hasClass("active") ? $(".special-popup .popup-content .close-button").click()
-                                                : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? $(".dinamic-popup .popup-content .close-button").click()
-                                                                                                                                        : soundCapsulePlayed || inTransition || e.currentTarget.attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1,
+      && $(".special-popup").hasClass("active") ? (e.stopPropagation(),
+                                                   $(".special-popup .popup-content .close-button").click())
+                                                : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(),
+                                                                                                                                           $(".dinamic-popup .popup-content .close-button").click())
+                                                                                                                                        : soundCapsulePlayed || inTransition || (e.stopPropagation(),
+                                                                                                                                                                                 $(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1,
                                                                                                                                                                                                                                                                      $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0,
                                                                                                                                                                                                                                                                                                                 $(".dinamic-popup .popup-content .close-button").click(),
                                                                                                                                                                                                                                                                                                                 inTransition = !1),
