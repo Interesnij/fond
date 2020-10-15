@@ -1,6 +1,6 @@
-
-    {% include 'items/navbar.html' %}
-    {% include 'items/preload.html' %}
+{% extends "base.html" %}
+{% block title %}Фонд мира{% endblock %}
+{% block content %}
 
     <section class="section-home">
         {% include 'main/section.html' %}
@@ -94,3 +94,5 @@
     {% include 'items/contact_popup.html' %}
 
     {% include 'items/footer_script.html' %}
+
+{% endblock %}

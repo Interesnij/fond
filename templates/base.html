@@ -1,64 +1,75 @@
-{% load staticfiles %}
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html>
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>{% block title %}{% endblock %}</title>
-		{% block meta %}{% endblock %}
+    <meta charset="UTF-8" />
+    <meta name="msapplication-TileImage" content="/static/images/duck-144x144.png">
+    <meta name="theme-color" content="#202020">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#202020">
+    <meta name="apple-mobile-web-app-title" content="Описание сайта">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<link href="{% static 'styles/font-awesome.min.css' %}" media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" />
-		<link href="{% static 'styles/bootstrap.min.css' %}" media='all' rel="stylesheet" type="text/css" />
-		<link href="{% static 'styles/animate.min.css' %}" media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" />
-		<link href="{% static 'styles/style.css' %}" media='all' rel="stylesheet" type="text/css" />
-		<link href="{% static 'styles/js_slider.css' %}" media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" />
-		<link href="{% static 'styles/preload.css' %}" media="all" rel="stylesheet" />
-
-		<script src="{% static 'scripts/jquery.min.js' %}" type="text/javascript"></script>
-		<script src="{% static 'scripts/ajax.min.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'scripts/jquery.parallax.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'scripts/js_slider.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'scripts/bootstrap.min.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'scripts/kostil.js' %}" type="text/javascript"></script>
-		<script defer src="{% static 'scripts/cockie.js' %}" type="text/javascript"></script>
-		<meta name="google-site-verification" content="1_EXNAYzb1B_67jTZxsAEA1mVtOPcAqTUpA8DyUZ3jk" />
-		<meta name="yandex-verification" content="7d8d2db961b13e2b" />
+    <title>О фонде</title>
+    <meta name="description" content="Описание сайта" />
+    <link href="/static/styles/digital.css" rel="stylesheet" />
+    <link id='wp-block-library-css' href="/static/styles/style.css" media="all" rel="stylesheet" />
 
 </head>
-<body class="ltr sticky-header offcanvas-init offcanvs-position-left">
-	<div class="jambotron-fluid">
-	<div class="body-wrapper" id="ajax">
 
-		<div class="page-loader">
-			<div class="loader">Загрузка...</div>
-		</div>
-    	{% include "navbar.html" %}
-			<section id="sp-main-body">
-			    <div class="row">
-			        <main id="sp-component" class="col-lg-12 " role="main">
-			            <div class="sp-column ">
-			                <div id="system-message-container">
-			                </div>
-			                <div id="sp-page-builder" class="sp-page-builder  page-98">
-												<div class="page-content">
-													{% block content %}
-													{% endblock %}
-												</div>
-											</div>
-			            </div>
-			        </main>
-			    </div>
-			</section>
+<body class="">
+    <script type="text/javascript">
+        //<![CDATA[
+        function updateBrowserTheme() {
+            var color = getComputedStyle(document.body).getPropertyValue('--primary-light-color');
+            document.querySelector('head meta[name="theme-color"]').content = color;
+            document.querySelector('head meta[name="apple-mobile-web-app-status-bar-style"]').content = color;
+        }
+        updateBrowserTheme();
+        //]]>
+    </script>
+    <script type="text/javascript">
+        var preloadImagesTotal = 4;
+        var preloadImagesLoaded_ = 0;
 
-		  {% include "footer.html" %}
+        function preloadImagesLoaded() {
+            preloadImagesLoaded_++;
+            if (preloadImagesLoaded_ == preloadImagesTotal) {
+                var imagesContainer = document.getElementById('preload-images-container');
+                imagesContainer.style.opacity = '1';
+            }
+        }
+    </script>
 
-			{% include "mob_menu.html" %}
+    {% include 'items/preload.html' %}
+		
+		{% block content %}
+		{% endblock %}
 
-			{% include "base_scripts.html" %}
-			<script defer src="{% static 'scripts/main.js' %}" type="text/javascript"></script>
-</div>
+		<div class="credits-popup">
+      {% include 'items/credits_popup.html' %}
+    </div>
 
-	</div>
-</body>
-</html>
+    <div class="gems-popup menu-popup">
+        <div class="popup-content">
+            <div class="close-button cursor-customized">
+                <div class="cross-container">
+                    <div class="stick stick1"></div>
+                    <div class="stick stick2"></div>
+                </div>
+                <div class="back-container">
+                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
+                </div>
+            </div>
+            <div class="general-container">
+                <nav class="menu-container">
+                    <ul></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    {% include 'items/contact_popup.html' %}
+
+    {% include 'items/footer_script.html' %}

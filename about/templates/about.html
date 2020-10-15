@@ -1,48 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="msapplication-TileImage" content="/static/images/duck-144x144.png">
-    <meta name="theme-color" content="#202020">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#202020">
-    <meta name="apple-mobile-web-app-title" content="Описание сайта">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>О фонде</title>
-    <meta name="description" content="Описание сайта" />
-    <link href="/static/styles/digital.css" rel="stylesheet" />
-    <link id='wp-block-library-css' href="/static/styles/style.css" media="all" rel="stylesheet" />
-
-</head>
-
-<body class="">
-    <script type="text/javascript">
-        //<![CDATA[
-        function updateBrowserTheme() {
-            var color = getComputedStyle(document.body).getPropertyValue('--primary-light-color');
-            document.querySelector('head meta[name="theme-color"]').content = color;
-            document.querySelector('head meta[name="apple-mobile-web-app-status-bar-style"]').content = color;
-        }
-        updateBrowserTheme();
-        //]]>
-    </script>
-    <script type="text/javascript">
-        var preloadImagesTotal = 4;
-        var preloadImagesLoaded_ = 0;
-
-        function preloadImagesLoaded() {
-            preloadImagesLoaded_++;
-            if (preloadImagesLoaded_ == preloadImagesTotal) {
-                var imagesContainer = document.getElementById('preload-images-container');
-                imagesContainer.style.opacity = '1';
-            }
-        }
-    </script>
-
-    {% include 'items/preload.html' %}
+{% extends "base.html" %}
+{% block title %}О фонде{% endblock %}
+{% block content %}
 
     <section class="section-home">
         {% include 'main/section.html' %}
@@ -110,29 +68,5 @@
             {% include 'items/other_page.html' %}
         </div>
     </div>
-    <div class="credits-popup">
-      {% include 'items/credits_popup.html' %}
-    </div>
-
-    <div class="gems-popup menu-popup">
-        <div class="popup-content">
-            <div class="close-button cursor-customized">
-                <div class="cross-container">
-                    <div class="stick stick1"></div>
-                    <div class="stick stick2"></div>
-                </div>
-                <div class="back-container">
-                    <p class="font-menu font-gray general-hover hover-white back-text">Назад</p>
-                </div>
-            </div>
-            <div class="general-container">
-                <nav class="menu-container">
-                    <ul></ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    {% include 'items/contact_popup.html' %}
-
-    {% include 'items/footer_script.html' %}
+    
+{% endblock %}
