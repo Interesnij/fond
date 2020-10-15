@@ -362,10 +362,10 @@ function home_bindEvents() {
             delay: 2 * e
         })
     }),
-    on('.bottom-bar', 'click', '.sound-container', function() {console.log("switchVolume"), switchVolume()})
 
-    //$(".bottom-bar .sound-container").click(switchVolume),
-    $(".special-link").on("click", changeCapsule),
+    on('.bottom-bar', 'click', '.sound-container', function() {switchVolume()})
+    on('body', 'click', '.special-link"', function() {console.log("changeCapsule"), changeCapsule()})
+    //$(".special-link").on("click", changeCapsule),
     $(".special-popup").on("click", ".menu-container .menu-item", changeCapsule),
     $(".dinamic-popup").on("click", ".popup-content .close-button", closeGeneralPopup),
     $(".special-popup").on("click", ".popup-content .close-button", closeSpecialPopup),
