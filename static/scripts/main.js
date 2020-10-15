@@ -290,7 +290,7 @@ function home_initializeGlobalVariables() {
     doPushState = !0,
 
     main_title_container = document.body.querySelector(".main-title-container");
-    top_bar = document.body.querySelector(".top-bat");
+    top_bar = document.body.querySelector(".top-bar");
     bottom_bar = document.body.querySelector(".bottom-bar");
 }
 
@@ -1504,7 +1504,7 @@ function animateCapsulePopup() {
     }),
     //$(".bottom-bar, .top-bar").css("z-index", "9"),
     //$(".main-title-container").css("z-index", "7"),
-    
+
     top_bar.style.zIndex = "9",
     bottom_bar.style.zIndex = "9",
     main_title_container.style.zIndex = "7",
