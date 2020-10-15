@@ -345,7 +345,7 @@ function home_bindEvents() {
         $(window).scroll(animateGeneralElements),
         $(window).scroll(animateShowVideos),
         on('.top-bar', 'click', '.gems-container.not-complete', function() {
-  
+        console.log("click!!")
         var e = 1,
             t = $(".gems-container .gems-text").innerWidth() * -.25;
         TweenLite.set(".gems-container .gems-text", {
