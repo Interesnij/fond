@@ -1323,11 +1323,9 @@ function disableCurrentSectionLink() {
 
 function changeCapsule(e) {
     $(e.currentTarget).hasClass("special-link")
-      && $(".special-popup").hasClass("active") ? (e.stopPropagation(),
-                                                   $(".special-popup .popup-content .close-button").click())
-                                                : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? (e.stopPropagation(),
-                                                                                                                                           $(".dinamic-popup .popup-content .close-button").click())
-                                                                                                                                        : soundCapsulePlayed || inTransition || ($(e.currentTarget).attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1,
+      && $(".special-popup").hasClass("active") ? $(".special-popup .popup-content .close-button").click()
+                                                : $(e.currentTarget).hasClass("special-link") && $(".dinamic-popup").hasClass("active") ? $(".dinamic-popup .popup-content .close-button").click()
+                                                                                                                                        : soundCapsulePlayed || inTransition || e.currentTarget.attr("data-menu") != $(".capsule.showing").attr("data-name") && (closeGeneralPopupInstantly = !1,
                                                                                                                                                                                                                                                                      $(".dinamic-popup").hasClass("active") && (closeGeneralPopupInstantly = !0,
                                                                                                                                                                                                                                                                                                                 $(".dinamic-popup .popup-content .close-button").click(),
                                                                                                                                                                                                                                                                                                                 inTransition = !1),
