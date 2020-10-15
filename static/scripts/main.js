@@ -2409,7 +2409,8 @@ function fo_init(e) {
     }
     resetMatter(),
     foRender = Render.create({
-        element: $(".fo-canvas")[0],
+        //element: $(".fo-canvas")[0],
+        element: document.body.querySelector(".fo-canvas")[0],
         engine: floatingEngine,
         options: {
             wireframes: !1,
@@ -2466,7 +2467,8 @@ function fo_init(e) {
 function create_items(e) {
     canvasFloatingObject.splice(e);
     for (var t = -1, n = 0; e > n; n++)
-    void 0 == canvasFloatingObject[n] || canvasFloatingObject[n].position.x > width || canvasFloatingObject[n].position.y > height ? (t++, delay = 50) : delay = 0,
+      void 0 == canvasFloatingObject[n] || canvasFloatingObject[n].position.x > width
+                                        || canvasFloatingObject[n].position.y > height ? (t++, delay = 50) : delay = 0,
     setTimeout(createAddItem.bind(null, n), delay * t)
 }
 
