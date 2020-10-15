@@ -2114,23 +2114,24 @@ function changeBoringText() {
 }
 
 function animateMainTitleWithText(e) {
-    for (var t = 0; t < e.length; t++) "home" == $currentCapsule.attr("data-name") && setTimeout(changeMainTitle.bind(null, e[t], !0), 750 * t)
+    for (var t = 0; t < e.length; t++)
+        "home" == $currentCapsule.attr("data-name") && setTimeout(changeMainTitle.bind(null, e[t], !0), 750 * t)
 }
 
 function stopBoringText() {
     $("js-open-popup").unbind("click", stopBoringText),
-    "home" == $currentCapsule.attr("data-name") && (changeMainTitle($($(".capsules-container .capsule.showing")).find(".capsule-main-title").text()), doBoringText = !1)
+    "home" == $currentCapsule.attr("data-name") && (changeMainTitle($($(".capsules-container .capsule.showing")).find(".capsule-main-title").text()),
+                                                    doBoringText = !1)
 }
 
 function sendNewsletter() {
     sending_form || (sending_form = !0, jQuery.ajax({
-        type: "POST",
-        url: "",
-        data: {
-            email: $(".dinamic-popup .input-newsletter").val()
-        },
         success: function(e) {
-            e = JSON.parse(e), $(".dinamic-popup .footer-popup .input-container .input-message p").text(e.message), "ok" == e.status && (createTagEvent("newsletterRegister"), $(".dinamic-popup .input-newsletter").val("")), TweenMax.set(".dinamic-popup .footer-popup .input-container .input-message", {
+            e = JSON.parse(e),
+            $(".dinamic-popup .footer-popup .input-container .input-message p").text(e.message),
+            "ok" == e.status && (createTagEvent("newsletterRegister"),
+            document.body.querySelector(".dinamic-popup .input-newsletter").value = ""),
+            TweenMax.set(".dinamic-popup .footer-popup .input-container .input-message", {
                 y: 20,
                 opacity: 0
             }), TweenMax.to(".dinamic-popup .footer-popup .input-container .input-message", .5, {
@@ -2143,14 +2144,13 @@ function sendNewsletter() {
 }
 
 function sendContactNewsletter() {
-    sending_form || (sending_form = !0, $(".special-popup .send-screen-newsletter").css("pointer-events", "none"), jQuery.ajax({
-        type: "POST",
-        url: "",
-        data: {
-            email: lastEmailForm
-        },
+    sending_form || (sending_form = !0,
+      document.body.querySelector(".special-popup .send-screen-newsletter").style.pointerEvents = "none",
+      jQuery.ajax({
         success: function(e) {
-            e = JSON.parse(e), "ok" == e.status && createTagEvent("newsletterRegister"), TweenMax.set(".special-popup .send-screen-ok-message", {
+            e = JSON.parse(e),
+            "ok" == e.status && createTagEvent("newsletterRegister"),
+            TweenMax.set(".special-popup .send-screen-ok-message", {
                 y: 0,
                 opacity: 0
             }), TweenMax.to(".special-popup .send-screen-newsletter", .5, {
@@ -2272,10 +2272,13 @@ var _createClass = function() {
     intervalMenu,
     intervalGems;
 $(window).on("load", function() {
-    load_home && home_docLoad(), load_home = !0, $(".fond-lazy").length > 0 && $(".fond-lazy").each(function(e, t) {
+    load_home && home_docLoad(),
+    load_home = !0,
+    $(".fond-lazy").length > 0 && $(".fond-lazy").each(function(e, t) {
         $(t).attr("src", $(t).attr("data-src"))
     })
-}), $(document).ready(home_docReady);
+}),
+$(document).ready(home_docReady);
 var changingColorInterval, tweenMaxTransition;
 window.onpopstate = function(e) {
     doPushState = !1;
@@ -2289,12 +2292,20 @@ window.onpopstate = function(e) {
 var hoverAnimation = !1,
     SvgCurtain = function() {
         function e(t) {
-            _classCallCheck(this, e), this.elm = t, this.path = t.querySelectorAll("path"), this.timeStart = Date.now(), this.delayPointsArray = [], this.isOpened = !1
+            _classCallCheck(this, e),
+            this.elm = t,
+            this.path = t.querySelectorAll("path"),
+            this.timeStart = Date.now(),
+            this.delayPointsArray = [],
+            this.isOpened = !1
         }
         return _createClass(e, [{
             key: "toggle",
             value: function(e) {
-                void 0 == e && (e = !1), curtainTransitionDuration = e ? 300 : 600, $("path.capa.capa1,path.capa.capa2").css("opacity", 1), inTransition = !0;
+                void 0 == e && (e = !1),
+                curtainTransitionDuration = e ? 300 : 600,
+                $("path.capa.capa1,path.capa.capa2").css("opacity", 1),
+                inTransition = !0;
                 for (var t = 4 * Math.random() + 6, n = 0; n < curtainPoints; n++) {
                     var i = n / (curtainPoints - 1) * Math.PI;
                     this.delayPointsArray[n] = (Math.sin(-i) + Math.sin(-i * t) + 2) / 4 * curtainPointsDelayMax
@@ -2304,17 +2315,26 @@ var hoverAnimation = !1,
         }, {
             key: "open",
             value: function() {
-                this.isOpened = !0, this.elm.classList.add("is-opened"), this.timeStart = Date.now(), this.renderLoop()
+                this.isOpened = !0,
+                this.elm.classList.add("is-opened"),
+                this.timeStart = Date.now(),
+                this.renderLoop()
             }
         }, {
             key: "close",
             value: function() {
-                this.isOpened = !1, this.elm.classList.remove("is-opened"), this.timeStart = Date.now(), this.renderLoop()
+                this.isOpened = !1,
+                this.elm.classList.remove("is-opened"),
+                this.timeStart = Date.now(),
+                this.renderLoop()
             }
         }, {
             key: "updatePath",
             value: function(e) {
-                for (var t = [], n = 0; n < curtainPoints + 1; n++) t[n] = 100 * ease.cubicInOut(Math.min(Math.max(e - this.delayPointsArray[n], 0) / curtainTransitionDuration, 1));
+                for (var t = [],
+                     n = 0;
+                     n < curtainPoints + 1; n++)
+                     t[n] = 100 * ease.cubicInOut(Math.min(Math.max(e - this.delayPointsArray[n], 0) / curtainTransitionDuration, 1));
                 var i = "";
                 i += this.isOpened ? "M 0 0 V " + t[0] + " " : "M 0 " + t[0] + " ";
                 for (var n = 0; n < curtainPoints - 1; n++) {
@@ -2328,10 +2348,12 @@ var hoverAnimation = !1,
             key: "render",
             value: function() {
                 if (this.isOpened)
-                    for (var e = 0; e < this.path.length; e++) this.path[e].setAttribute("d", this.updatePath(Date.now() - (this.timeStart + curtainDelayPerPath * e)));
+                    for (var e = 0; e < this.path.length; e++)
+                        this.path[e].setAttribute("d", this.updatePath(Date.now() - (this.timeStart + curtainDelayPerPath * e)));
                 else {
                     $("path.capa.capa1,path.capa.capa2").css("opacity", 0);
-                    for (var e = 0; e < this.path.length; e++) this.path[e].setAttribute("d", this.updatePath(Date.now() - (this.timeStart + curtainDelayPerPath * (this.path.length - e - 1))))
+                    for (var e = 0; e < this.path.length; e++)
+                        this.path[e].setAttribute("d", this.updatePath(Date.now() - (this.timeStart + curtainDelayPerPath * (this.path.length - e - 1))))
                 }
             }
         }, {
