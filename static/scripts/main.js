@@ -1500,9 +1500,9 @@ function animateCapsulePopup() {
         y: 20
     }),
     $(".bottom-bar, .top-bar").css("z-index", "9"),
-    $(".main-title-container").css("z-index", "7"),
-    //$(".bottom-bar .center-container p").text("Листайте вниз"),
-    main_title_container.innerHTML = "Листайте вниз",
+    //$(".main-title-container").css("z-index", "7"),
+    main_title_container.style.zIndex = "7",
+    $(".bottom-bar .center-container p").text("Листайте вниз"),
     $(".bottom-bar .center-container").addClass("blink"),
     $(".bottom-bar .home-center-container").css("display", "none"),
     setTimeout(function() {
