@@ -2526,7 +2526,7 @@ var matterEngine = Matter.Engine,
     idRAF = null;
 $(window).scroll(updateMouseOffset),
 $(window).on("resize", function() {
-  fo_canvas = document.bodu.querySelector(".fo-canvas");
+  fo_canvas = document.body.querySelector(".fo-canvas");
     $("body").hasClass("popup-capsule-opened") && (height < fo_canvas.innerHeight()
                                                    || width < fo_canvas.innerWidth()
                                                    || !isTouchDevice()) && fo_init(!0)
