@@ -2532,4 +2532,4 @@ $(window).on("resize", function() {
 });
 
 
-var THEMES = JSON.parse('["default","red","black-white","blue","yellow","orange-blue","pink-yellow","blue-pink","purple-blue","blue-green"]');
+var THEMES = JSON.parse('["default","red","blue","yellow","orange-blue","pink-yellow","blue-pink","purple-blue","blue-green","white-black"]');
