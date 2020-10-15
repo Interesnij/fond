@@ -2389,7 +2389,8 @@ function destroyMatter() {
     floatingEngine.events = {},
     World.clear(floatingEngine.world),
     matterEngine.clear(floatingEngine),
-    $(".fo-canvas canvas").remove()
+    document.body.querySelector(".fo-canvas canvas").innerHTML = "";
+    //$(".fo-canvas canvas").remove()
 }
 
 function fo_init(e) {
