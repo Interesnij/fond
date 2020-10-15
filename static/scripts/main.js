@@ -268,7 +268,7 @@ function home_initializeGlobalVariables() {
     soundsMuted = !1,
     soundsMutedByContact = !1,
     //$currentCapsule = $(".capsules-container .capsule.current"),
-    $currentCapsule = document.body.querySelector(".capsules-container .capsule.current"),
+    $currentCapsule = document.body.querySelector(".capsules-container .capsule.current") || null,
     $transitionCurtain = $(".transition-curtain")[0],
     $(".section-home").hasClass("is-404") || (overlay = new SvgCurtain($transitionCurtain)),
     curtainTransitionDuration = 600,
